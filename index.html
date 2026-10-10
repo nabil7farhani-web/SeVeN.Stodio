@@ -3,374 +3,521 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
-<title>SeVeN Studio7 | Creative Lab</title>
+<meta name="description" content="SeVeN Studio7 — Photography, Cinematic Visuals, Creative Design and AI Lab.">
+<title>SeVeN Studio7 | Creative Visual Lab</title>
+
 <style>
 :root{
- --bg:#090909;--panel:#111;--line:#302626;
- --white:#f7f4ef;--muted:#aaa29f;--red:#c52c3b;
+  --bg:#090909;
+  --panel:#121212;
+  --panel2:#191616;
+  --red:#d52c40;
+  --gold:#c9a96e;
+  --white:#f7f4ef;
+  --muted:#aaa4a0;
+  --line:rgba(201,169,110,.22);
+  --radius:22px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{
- margin:0;background:var(--bg);color:var(--white);
- font-family:Arial,Tahoma,sans-serif;line-height:1.8;
- text-align:center;
+  margin:0;background:
+  radial-gradient(ellipse at 50% 0%,rgba(153,24,42,.14),transparent 42%),
+  var(--bg);
+  color:var(--white);
+  font-family:Arial,Tahoma,sans-serif;
+  line-height:1.8;text-align:center;
 }
 a{color:inherit;text-decoration:none}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
-.container{width:min(1080px,92%);margin:auto}
-header{
- position:sticky;top:0;z-index:20;
- background:#090909ed;backdrop-filter:blur(12px);
- border-bottom:1px solid var(--line);
+img{max-width:100%;display:block}
+.container{width:min(1120px,92%);margin:auto}
+.gold{color:var(--gold)}
+.muted{color:var(--muted)}
+section{padding:85px 0}
+.section-head{max-width:700px;margin:0 auto 38px}
+.eyebrow{
+  display:inline-block;color:var(--gold);font-size:12px;
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:8px
 }
-nav{
- min-height:75px;display:flex;justify-content:center;
- align-items:center;gap:18px;flex-wrap:wrap;padding:15px 0;
-}
-.brand{font-size:22px;font-weight:900;letter-spacing:1px}
-.brand span,.red{color:var(--red)}
-.links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.links a{font-size:13px;color:#ddd}
-.links a:hover{color:#ff6674}
-select,.field,textarea{
- width:100%;background:#0c0c0c;color:white;
- border:1px solid #3a3030;border-radius:4px;padding:12px;
-}
-select{width:auto}
-.hero{
- padding:95px 0 85px;
- background:radial-gradient(ellipse at top,#341017 0%,#151010 32%,#090909 72%);
- border-bottom:1px solid var(--line);
-}
-.eyebrow{font-size:11px;letter-spacing:4px;color:#e15a68}
-h1{font-size:clamp(39px,7vw,76px);line-height:1.2;margin:20px 0}
-h2{font-size:clamp(26px,4vw,38px);line-height:1.35;margin:0 0 12px}
+h1,h2,h3,p{margin-top:0}
+h2{font-size:clamp(27px,4vw,42px);line-height:1.3;margin-bottom:14px}
 p{color:var(--muted)}
-.hero p{max-width:650px;margin:0 auto}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(9,9,9,.88);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line)
+}
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;flex-wrap:wrap;padding:12px 0
+}
+.brand{font-size:21px;font-weight:900;letter-spacing:1px}
+.brand span{color:var(--red)}
+nav{display:flex;justify-content:center;gap:19px;flex-wrap:wrap}
+nav a{font-size:13px;color:#ddd;transition:.25s}
+nav a:hover{color:var(--gold)}
+.lang{
+  background:#151515;color:var(--gold);border:1px solid var(--line);
+  padding:8px 10px;border-radius:12px;max-width:115px
+}
+.hero{
+  min-height:690px;display:grid;place-items:center;padding:80px 0 90px;
+  position:relative;overflow:hidden
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:50%;filter:blur(2px);
+  pointer-events:none
+}
+.hero:before{
+  width:280px;height:280px;top:60px;right:-170px;
+  border:1px solid rgba(213,44,64,.35)
+}
+.hero:after{
+  width:340px;height:340px;bottom:-230px;left:-180px;
+  border:1px solid rgba(201,169,110,.3)
+}
+.hero-content{max-width:850px;position:relative;z-index:1}
+.logo-mark{
+  width:76px;height:76px;margin:0 auto 25px;
+  display:grid;place-items:center;border:1px solid var(--gold);
+  color:var(--gold);border-radius:22px;font-size:28px;font-weight:900;
+  transform:rotate(-4deg);box-shadow:0 0 45px rgba(201,169,110,.09)
+}
+.hero h1{
+  font-size:clamp(39px,8vw,82px);line-height:1.12;
+  letter-spacing:-2px;margin:12px 0 20px
+}
+.hero h1 span{
+  display:block;color:var(--gold);
+  text-shadow:0 0 35px rgba(201,169,110,.14)
+}
+.hero p{max-width:620px;margin:0 auto 28px;font-size:16px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{
- display:inline-flex;align-items:center;justify-content:center;
- gap:8px;padding:12px 19px;border:1px solid #514040;
- background:#151212;color:white;border-radius:4px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 23px;border-radius:13px;border:1px solid var(--line);
+  background:#171515;color:var(--white);transition:transform .25s,background .25s;
+  font-weight:700;font-size:14px
 }
-.btn.primary{background:var(--red);border-color:var(--red)}
-.btn:hover{filter:brightness(1.2)}
-.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}
-section{padding:72px 0}
-.section-head{margin:0 auto 30px;max-width:700px}
-.rule{width:55px;height:2px;background:var(--red);margin:17px auto}
+.btn:hover{transform:translateY(-3px);background:#242020}
+.btn-primary{
+  background:linear-gradient(135deg,#d52c40,#8f1427);
+  border-color:#d52c40;box-shadow:0 8px 30px rgba(213,44,64,.18)
+}
+.btn-gold{border-color:var(--gold);color:var(--gold)}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  max-width:630px;margin:48px auto 0
+}
+.stat{
+  border:1px solid var(--line);background:rgba(255,255,255,.025);
+  border-radius:16px;padding:17px 10px
+}
+.stat strong{display:block;color:var(--gold);font-size:22px}
+.stat span{font-size:12px;color:var(--muted)}
 .panel{
- background:linear-gradient(145deg,#151212,#0d0d0d);
- border:1px solid var(--line);padding:25px;border-radius:7px;
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+  border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  box-shadow:0 20px 65px rgba(0,0,0,.16)
 }
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.work{
- overflow:hidden;background:#111;border:1px solid var(--line);
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.work-card{
+  overflow:hidden;background:var(--panel);border:1px solid var(--line);
+  border-radius:19px;transition:transform .3s,border-color .3s
 }
-.work img{width:100%;height:210px;object-fit:cover;display:block}
-.work h3{font-size:17px;margin:12px}
-.work p{font-size:13px;margin:0 12px 15px}
-.lab{max-width:800px;margin:auto}
-.drop{
- display:block;padding:30px 15px;border:1px dashed #8e3943;
- background:#100d0e;border-radius:6px;cursor:pointer;
+.work-card:hover{transform:translateY(-7px);border-color:var(--gold)}
+.work-card img{width:100%;height:230px;object-fit:cover;transition:transform .5s}
+.work-card:hover img{transform:scale(1.045)}
+.work-info{padding:18px}
+.work-info h3{margin-bottom:5px;font-size:17px}
+.work-info p{font-size:13px;margin-bottom:0}
+.services{grid-template-columns:repeat(3,minmax(0,1fr))}
+.service{
+  padding:26px 18px;border-radius:18px;border:1px solid var(--line);
+  background:var(--panel);transition:.25s
 }
-.drop strong{display:block;font-size:19px}
-.drop input{display:block;max-width:100%;margin:14px auto 0}
+.service:hover{transform:translateY(-5px);background:#191515}
+.service .symbol{font-size:29px;margin-bottom:9px}
+.service h3{font-size:17px;margin-bottom:7px}
+.service p{font-size:13px;margin-bottom:0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.field{width:100%;background:#090909;color:var(--white);border:1px solid #39312b;
+  border-radius:12px;padding:12px;margin:7px 0 14px;outline:none}
+.field:focus{border-color:var(--gold)}
+label{display:block;text-align:center;font-size:13px;color:#ddd}
+input[type="file"]{font-size:13px}
 .preview{
- width:100%;max-height:520px;object-fit:contain;
- display:block;margin:20px auto;background:#050505;
+  width:100%;min-height:180px;max-height:400px;object-fit:contain;
+  border:1px dashed #4a3b32;border-radius:15px;background:#090909;margin:10px auto
 }
-.controls{
- display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
- gap:17px;margin-top:22px;text-align:center;
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.control label{display:flex;justify-content:space-between;gap:8px}
+input[type="range"]{width:100%;accent-color:var(--red)}
+.small{font-size:12px}
+.notice{
+  padding:13px;border:1px solid rgba(201,169,110,.25);
+  border-radius:12px;background:rgba(201,169,110,.05);
+  color:#d4c4a8;font-size:13px;margin:12px 0
 }
-.control{padding:13px;background:#0b0b0b;border:1px solid #292323}
-.control label{display:block;margin-bottom:8px;font-size:14px}
-input[type=range]{width:100%;accent-color:var(--red)}
-input[type=file]{color:#ddd}
-input[type=range]:disabled{opacity:.4}
-textarea{min-height:110px;resize:vertical}
-.status{font-size:13px;min-height:28px;margin:12px 0}
-.note{font-size:12px}
-.socials{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.socials a{border:1px solid #433438;padding:10px 16px}
-.socials a:hover{background:var(--red)}
-footer{border-top:1px solid var(--line);padding:25px;color:var(--muted);font-size:12px}
-[hidden]{display:none!important}
-@media(max-width:650px){
- .hero{padding:70px 0}
- section{padding:52px 0}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .work img{height:145px}
- .work h3{font-size:14px}
- .panel{padding:15px}
- .controls{grid-template-columns:1fr}
- nav{gap:12px}
+textarea.field{min-height:110px;resize:vertical}
+.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.social{
+  min-width:130px;padding:13px;border:1px solid var(--line);
+  border-radius:13px;background:#121212;transition:.25s
 }
-@media(max-width:380px){.grid{grid-template-columns:1fr}.work img{height:200px}}
+.social:hover{border-color:var(--gold);color:var(--gold)}
+footer{border-top:1px solid var(--line);padding:28px 0 36px}
+footer p{font-size:12px;margin:4px 0}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.toast{
+  position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);
+  background:#24201a;border:1px solid var(--gold);color:var(--white);
+  padding:12px 18px;border-radius:12px;z-index:99;opacity:0;
+  pointer-events:none;transition:.3s;max-width:90%;font-size:13px
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+[dir="ltr"]{text-align:center}
+@media(max-width:760px){
+  .nav{justify-content:center}
+  nav{gap:12px}
+  nav a{font-size:12px}
+  .grid,.services,.two-col{grid-template-columns:1fr}
+  .hero{min-height:600px;padding:65px 0}
+  .stats{gap:7px}
+  .stat{padding:12px 5px}
+  .stat strong{font-size:19px}
+  section{padding:64px 0}
+  .panel{padding:18px}
+  .work-card img{height:240px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+}
 </style>
 </head>
-<body>
 
+<body>
 <header>
-<nav class="container">
- <a href="#home" class="brand">SeVeN<span>.</span>Studio7</a>
- <div class="links">
-  <a href="#home" data-ar="الرئيسية" data-fa="خانه" data-en="Home">الرئيسية</a>
-  <a href="#portfolio" data-ar="أعمالنا" data-fa="نمونه‌کارها" data-en="Portfolio">أعمالنا</a>
-  <a href="#editor" data-ar="محرر الصور" data-fa="ویرایشگر عکس" data-en="Photo Editor">محرر الصور</a>
-  <a href="#ai" data-ar="مختبر AI" data-fa="آزمایشگاه هوش مصنوعی" data-en="AI Lab">مختبر AI</a>
-  <a href="#contact" data-ar="التواصل" data-fa="تماس" data-en="Contact">التواصل</a>
- </div>
- <select id="lang" aria-label="Language">
-  <option value="ar">العربية</option>
-  <option value="fa">فارسی</option>
-  <option value="en">English</option>
- </select>
-</nav>
+  <div class="container nav">
+    <a class="brand" href="#home">SeVeN<span>.</span>Studio7</a>
+    <nav aria-label="Main navigation">
+      <a href="#home" data-i18n="navHome">الرئيسية</a>
+      <a href="#work" data-i18n="navWork">الأعمال</a>
+      <a href="#services" data-i18n="navServices">الخدمات</a>
+      <a href="#editor" data-i18n="navEditor">محرر الصور</a>
+      <a href="#ai" data-i18n="navAI">مختبر AI</a>
+      <a href="#contact" data-i18n="navContact">تواصل</a>
+    </nav>
+    <select id="language" class="lang" aria-label="Choose language">
+      <option value="ar">العربية</option>
+      <option value="fa">فارسی</option>
+      <option value="en">English</option>
+    </select>
+  </div>
 </header>
 
 <main>
 <section class="hero" id="home">
- <div class="container">
-  <div class="eyebrow">PHOTOGRAPHY · DESIGN · ARTIFICIAL INTELLIGENCE</div>
-  <h1>رؤيتك تتحول إلى<br><span class="red">فن استثنائي</span></h1>
-  <p>استوديو إبداعي للتصوير الاحترافي والفيديو والتصميم، مع مختبر أدوات الصور وتجارب الذكاء الاصطناعي.</p>
-  <div class="actions">
-   <a class="btn primary" href="#portfolio">اكتشف الاستوديو</a>
-   <a class="btn" href="#editor">جرّب محرر الصور</a>
+  <div class="container hero-content">
+    <div class="logo-mark">S7</div>
+    <span class="eyebrow" data-i18n="eyebrow">استوديو إبداعي مستقل</span>
+    <h1>SeVeN <span>Studio7</span></h1>
+    <p data-i18n="heroText">نحوّل اللحظات والأفكار إلى صور ومشاهد بصرية تحمل هويتك. تصوير، تصميم، محتوى إعلاني وتجارب إبداعية.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#work" data-i18n="viewWork">✦ اكتشف أعمالنا</a>
+      <a class="btn btn-gold" href="https://wa.me/989335960566" target="_blank" rel="noopener" data-i18n="startProject">ابدأ مشروعك ↗</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>01</strong><span data-i18n="stat1">رؤية إبداعية</span></div>
+      <div class="stat"><strong>4K+</strong><span data-i18n="stat2">تفاصيل بصرية</span></div>
+      <div class="stat"><strong>∞</strong><span data-i18n="stat3">أفكار جديدة</span></div>
+    </div>
   </div>
- </div>
 </section>
 
-<section id="portfolio">
- <div class="container">
-  <div class="section-head">
-   <div class="eyebrow">OUR CREATIVE WORLD</div>
-   <h2>عالم SeVeN Studio7</h2>
-   <div class="rule"></div>
-   <p>مساحة للأفكار الجريئة والتصوير والفن البصري.</p>
+<section id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="portfolioLabel">PORTFOLIO</span>
+      <h2 data-i18n="portfolioTitle">معرض <span class="gold">الأعمال</span></h2>
+      <p data-i18n="portfolioText">مساحة لعرض التصوير، المنتجات، اللقطات السينمائية والأفكار الإعلانية.</p>
+    </div>
+    <div class="grid">
+      <article class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85" alt="Professional camera" loading="lazy">
+        <div class="work-info"><h3 data-i18n="work1">تصوير احترافي</h3><p data-i18n="work1d">تفاصيل، إضاءة وهوية بصرية.</p></div>
+      </article>
+      <article class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85" alt="Fashion product photography" loading="lazy">
+        <div class="work-info"><h3 data-i18n="work2">تصوير المنتجات</h3><p data-i18n="work2d">عرض أنيق يبرز قيمة المنتج.</p></div>
+      </article>
+      <article class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85" alt="Cinematic night sky" loading="lazy">
+        <div class="work-info"><h3 data-i18n="work3">مشاهد سينمائية</h3><p data-i18n="work3d">ألوان وأجواء تحكي قصة.</p></div>
+      </article>
+    </div>
+    <p class="small muted" style="margin-top:18px" data-i18n="sampleNote">صور المعرض أمثلة توضيحية. يمكنك استبدالها بأعمالك الأصلية لاحقاً.</p>
   </div>
-  <div class="grid">
-   <article class="work">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=700&q=80" alt="Photography">
-    <h3>التصوير الاحترافي</h3><p>لحظات بتفاصيل فنية.</p>
-   </article>
-   <article class="work">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="Video">
-    <h3>الفيديو السينمائي</h3><p>قصص تُروى بالصورة.</p>
-   </article>
-   <article class="work">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=700&q=80" alt="Design">
-    <h3>التصميم الإبداعي</h3><p>هوية بصرية مميزة.</p>
-   </article>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="servicesLabel">WHAT WE CREATE</span>
+      <h2 data-i18n="servicesTitle">مساحتنا <span class="gold">الإبداعية</span></h2>
+    </div>
+    <div class="grid services">
+      <article class="service reveal"><div class="symbol">◉</div><h3 data-i18n="service1">التصوير الفوتوغرافي</h3><p data-i18n="service1d">صور شخصية، منتجات وذكريات.</p></article>
+      <article class="service reveal"><div class="symbol">▶</div><h3 data-i18n="service2">الفيديو والإعلانات</h3><p data-i18n="service2d">مقاطع قصيرة ومحتوى للسوشيال ميديا.</p></article>
+      <article class="service reveal"><div class="symbol">✧</div><h3 data-i18n="service3">التصميم الإبداعي</h3><p data-i18n="service3d">هويات بصرية وأفكار تسويقية.</p></article>
+    </div>
   </div>
- </div>
 </section>
 
 <section id="editor">
- <div class="container lab">
-  <div class="section-head">
-   <div class="eyebrow">YOUR IMAGE · YOUR VISION</div>
-   <h2>مختبر تعديل الصور</h2>
-   <div class="rule"></div>
-   <p>ارفع صورة من جهازك، عدّل الإضاءة والألوان، ثم نزّل النتيجة. المعالجة الأساسية تتم داخل المتصفح.</p>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="editorLabel">PHOTO WORKSHOP</span>
+      <h2 data-i18n="editorTitle">مختبر <span class="gold">تعديل الصور</span></h2>
+      <p data-i18n="editorIntro">ارفع صورة من جهازك، عدّل الإضاءة والألوان، ثم نزّل النتيجة. المعالجة هنا تتم داخل متصفحك.</p>
+    </div>
+    <div class="panel reveal">
+      <label for="photoInput" data-i18n="choosePhoto">اختر صورة من جهازك</label>
+      <input class="field" type="file" id="photoInput" accept="image/*">
+      <img id="photoPreview" class="preview" alt="Photo preview" hidden>
+      <div class="controls">
+        <div class="control"><label for="brightness"><span data-i18n="brightness">السطوع</span><span id="brightnessValue">100%</span></label><input id="brightness" type="range" min="40" max="160" value="100"></div>
+        <div class="control"><label for="contrast"><span data-i18n="contrast">التباين</span><span id="contrastValue">100%</span></label><input id="contrast" type="range" min="40" max="160" value="100"></div>
+        <div class="control"><label for="saturation"><span data-i18n="saturation">تشبع الألوان</span><span id="saturationValue">100%</span></label><input id="saturation" type="range" min="0" max="200" value="100"></div>
+        <div class="control"><label for="sepia"><span data-i18n="warmth">تأثير دافئ</span><span id="sepiaValue">0%</span></label><input id="sepia" type="range" min="0" max="100" value="0"></div>
+      </div>
+      <div class="actions" style="margin-top:20px">
+        <button class="btn" id="resetPhoto" type="button" data-i18n="reset">إعادة ضبط</button>
+        <button class="btn btn-primary" id="downloadPhoto" type="button" data-i18n="download">تنزيل الصورة المعدلة ↓</button>
+      </div>
+      <p class="small muted" data-i18n="privacyNote">الصورة لا تُرفع إلى خادم هذا الموقع؛ تبقى المعالجة داخل المتصفح.</p>
+    </div>
   </div>
-  <div class="panel">
-   <label class="drop" for="upload">
-    <strong>＋ اختر صورتك</strong>
-    <span class="note">JPG أو PNG أو WebP — تبقى الصورة على جهازك أثناء التعديل المحلي.</span>
-    <input id="upload" type="file" accept="image/jpeg,image/png,image/webp">
-   </label>
-   <img id="preview" class="preview" alt="معاينة الصورة المعدلة" hidden>
-   <div class="controls">
-    <div class="control">
-     <label for="brightness">الإضاءة <output id="brightnessOut">100%</output></label>
-     <input id="brightness" type="range" min="30" max="180" value="100" disabled>
-    </div>
-    <div class="control">
-     <label for="contrast">التباين <output id="contrastOut">100%</output></label>
-     <input id="contrast" type="range" min="30" max="180" value="100" disabled>
-    </div>
-    <div class="control">
-     <label for="saturation">تشبع الألوان <output id="saturationOut">100%</output></label>
-     <input id="saturation" type="range" min="0" max="200" value="100" disabled>
-    </div>
-    <div class="control">
-     <label for="sepia">تأثير كلاسيكي <output id="sepiaOut">0%</output></label>
-     <input id="sepia" type="range" min="0" max="100" value="0" disabled>
-    </div>
-   </div>
-   <div class="actions">
-    <button class="btn" id="reset" disabled>إعادة الضبط</button>
-    <button class="btn primary" id="download" disabled>تنزيل الصورة المعدلة</button>
-   </div>
-   <p id="editStatus" class="status" aria-live="polite">اختر صورة حتى تبدأ التعديل.</p>
-  </div>
- </div>
 </section>
 
 <section id="ai">
- <div class="container lab">
-  <div class="section-head">
-   <div class="eyebrow">AI CREATIVE LAB</div>
-   <h2>مختبر الذكاء الاصطناعي</h2>
-   <div class="rule"></div>
-   <p>حضّر الصورة واكتب وصف التعديل الذي تريده. هذه الواجهة جاهزة للربط بخدمة ذكاء اصطناعي حقيقية.</p>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">SEVEN AI LAB</span>
+      <h2 data-i18n="aiTitle">مختبر <span class="gold">الذكاء الاصطناعي</span></h2>
+      <p data-i18n="aiIntro">حضّر وصفاً إبداعياً لصورتك، ثم افتح ChatGPT وأرفق الصورة هناك لمتابعة إنشاء أو تعديل الصورة.</p>
+    </div>
+    <div class="two-col">
+      <div class="panel reveal">
+        <label for="aiPhoto" data-i18n="aiChoose">اختر صورة مرجعية (اختياري)</label>
+        <input id="aiPhoto" class="field" type="file" accept="image/*">
+        <img id="aiPreview" class="preview" alt="AI reference preview" hidden>
+        <label for="aiStyle" data-i18n="aiStyleLabel">نوع النتيجة المطلوبة</label>
+        <select id="aiStyle" class="field">
+          <option value="cinematic luxury photography">Cinematic Luxury</option>
+          <option value="professional product advertising">Product Advertising</option>
+          <option value="classic black and gold portrait">Classic Portrait</option>
+          <option value="dreamlike artistic photography">Dreamlike Art</option>
+          <option value="clean professional studio lighting">Studio Lighting</option>
+        </select>
+        <label for="aiPrompt" data-i18n="aiPromptLabel">أضف تفاصيل فكرتك</label>
+        <textarea id="aiPrompt" class="field" placeholder="مثلاً: أجواء فاخرة، إضاءة سينمائية، تفاصيل طبيعية..."></textarea>
+        <div class="actions">
+          <button class="btn btn-gold" id="makePrompt" type="button" data-i18n="makePrompt">تجهيز الوصف ✧</button>
+          <button class="btn" id="copyPrompt" type="button" data-i18n="copyPrompt">نسخ الوصف</button>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h3 data-i18n="promptResultTitle">وصفك الإبداعي</h3>
+        <textarea id="promptResult" class="field" readonly placeholder="سيظهر الوصف هنا بعد الضغط على تجهيز الوصف..."></textarea>
+        <a class="btn btn-primary" href="https://chatgpt.com/" target="_blank" rel="noopener" data-i18n="openAI">افتح ChatGPT ↗</a>
+        <div class="notice" data-i18n="aiNotice">تنبيه: هذا القسم يجهّز الوصف فقط. إنشاء الصور بالذكاء الاصطناعي غير مربوط تلقائياً بهذا الموقع بعد؛ يحتاج تكامل خدمة AI منفصل ومفتاح API آمن على الخادم.</div>
+      </div>
+    </div>
   </div>
-  <div class="panel">
-   <label class="drop" for="aiUpload">
-    <strong>＋ ارفع صورة لمشروع AI</strong>
-    <span class="note">اختر صورة من هاتفك. لن تُرسل إلى خدمة خارجية في هذه النسخة.</span>
-    <input id="aiUpload" type="file" accept="image/jpeg,image/png,image/webp">
-   </label>
-   <p id="aiFileName" class="status" aria-live="polite">لم تختر صورة بعد.</p>
-   <label for="prompt">صف التعديل الذي تريده</label>
-   <textarea id="prompt" maxlength="1200" placeholder="مثال: حسّن الإضاءة، واجعل الخلفية سينمائية، مع الحفاظ على ملامح الشخص الطبيعية."></textarea>
-   <div class="actions">
-    <button class="btn primary" id="aiRequest">تحضير طلب التعديل</button>
-   </div>
-   <p class="note">تنبيه: هذه النسخة لا تنشئ صورة AI بعد. التوليد الفعلي يحتاج خدمة خارجية وخادمًا آمنًا لحماية مفتاح API ورفع الصورة ومعالجة النتيجة.</p>
-   <p id="aiStatus" class="status" aria-live="polite"></p>
-  </div>
- </div>
 </section>
 
 <section id="contact">
- <div class="container">
-  <div class="section-head">
-   <div class="eyebrow">LET'S CREATE TOGETHER</div>
-   <h2>خلّينا نحول فكرتك إلى واقع</h2>
-   <p>للتصوير والتصميم والإعلانات والتعاون، تواصل معنا.</p>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="contactLabel">LET'S CONNECT</span>
+      <h2 data-i18n="contactTitle">خلّينا نصنع شيئاً <span class="gold">استثنائياً</span></h2>
+      <p data-i18n="contactText">للتصوير، التعاون أو الاستفسار عن مشروعك، تواصل عبر منصاتنا.</p>
+    </div>
+    <div class="socials reveal">
+      <a class="social" href="https://www.instagram.com/n_svvn7" target="_blank" rel="noopener">◎ Instagram</a>
+      <a class="social" href="https://wa.me/989335960566" target="_blank" rel="noopener">◉ WhatsApp</a>
+      <a class="social" href="https://youtube.com/@n_svvn7" target="_blank" rel="noopener">▶ YouTube</a>
+      <a class="social" href="https://t.me/Nabiil7" target="_blank" rel="noopener">➤ Telegram</a>
+    </div>
   </div>
-  <div class="socials">
-   <a href="https://www.instagram.com/n_svvn7" target="_blank" rel="noopener">Instagram</a>
-   <a href="https://wa.me/989335960566" target="_blank" rel="noopener">WhatsApp</a>
-   <a href="https://youtube.com/@n_svvn7" target="_blank" rel="noopener">YouTube</a>
-   <a href="https://t.me/Nabiil7" target="_blank" rel="noopener">Telegram</a>
-  </div>
- </div>
 </section>
 </main>
 
-<footer>© <span id="year"></span> SeVeN Studio7 · الفن يبدأ من فكرة</footer>
+<footer>
+  <div class="container">
+    <a class="brand" href="#home">SeVeN<span>.</span>Studio7</a>
+    <p data-i18n="footerText">رؤية إبداعية. تفاصيل استثنائية.</p>
+    <p>© <span id="year"></span> SeVeN Studio7 — <span data-i18n="rights">جميع الحقوق محفوظة</span></p>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script>
-const $=id=>document.getElementById(id);
-$("year").textContent=new Date().getFullYear();
+const $ = id => document.getElementById(id);
+$("year").textContent = new Date().getFullYear();
+
+const translations = {
+ar:{
+navHome:"الرئيسية",navWork:"الأعمال",navServices:"الخدمات",navEditor:"محرر الصور",navAI:"مختبر AI",navContact:"تواصل",
+eyebrow:"استوديو إبداعي مستقل",heroText:"نحوّل اللحظات والأفكار إلى صور ومشاهد بصرية تحمل هويتك. تصوير، تصميم، محتوى إعلاني وتجارب إبداعية.",
+viewWork:"✦ اكتشف أعمالنا",startProject:"ابدأ مشروعك ↗",stat1:"رؤية إبداعية",stat2:"تفاصيل بصرية",stat3:"أفكار جديدة",
+portfolioLabel:"معرض الأعمال",portfolioTitle:"معرض الأعمال",portfolioText:"مساحة لعرض التصوير، المنتجات، اللقطات السينمائية والأفكار الإعلانية.",
+work1:"تصوير احترافي",work1d:"تفاصيل، إضاءة وهوية بصرية.",work2:"تصوير المنتجات",work2d:"عرض أنيق يبرز قيمة المنتج.",work3:"مشاهد سينمائية",work3d:"ألوان وأجواء تحكي قصة.",
+sampleNote:"صور المعرض أمثلة توضيحية. يمكنك استبدالها بأعمالك الأصلية لاحقاً.",
+servicesLabel:"ماذا نصنع؟",servicesTitle:"مساحتنا الإبداعية",service1:"التصوير الفوتوغرافي",service1d:"صور شخصية، منتجات وذكريات.",service2:"الفيديو والإعلانات",service2d:"مقاطع قصيرة ومحتوى للسوشيال ميديا.",service3:"التصميم الإبداعي",service3d:"هويات بصرية وأفكار تسويقية.",
+editorLabel:"ورشة الصور",editorTitle:"مختبر تعديل الصور",editorIntro:"ارفع صورة من جهازك، عدّل الإضاءة والألوان، ثم نزّل النتيجة. المعالجة هنا تتم داخل متصفحك.",choosePhoto:"اختر صورة من جهازك",brightness:"السطوع",contrast:"التباين",saturation:"تشبع الألوان",warmth:"تأثير دافئ",reset:"إعادة ضبط",download:"تنزيل الصورة المعدلة ↓",privacyNote:"الصورة لا تُرفع إلى خادم هذا الموقع؛ تبقى المعالجة داخل المتصفح.",
+aiTitle:"مختبر الذكاء الاصطناعي",aiIntro:"حضّر وصفاً إبداعياً لصورتك، ثم افتح ChatGPT وأرفق الصورة هناك لمتابعة إنشاء أو تعديل الصورة.",aiChoose:"اختر صورة مرجعية (اختياري)",aiStyleLabel:"نوع النتيجة المطلوبة",aiPromptLabel:"أضف تفاصيل فكرتك",makePrompt:"تجهيز الوصف ✧",copyPrompt:"نسخ الوصف",promptResultTitle:"وصفك الإبداعي",openAI:"افتح ChatGPT ↗",aiNotice:"تنبيه: هذا القسم يجهّز الوصف فقط. إنشاء الصور بالذكاء الاصطناعي غير مربوط تلقائياً بهذا الموقع بعد؛ يحتاج تكامل خدمة AI منفصل ومفتاح API آمن على الخادم.",
+contactLabel:"لنتواصل",contactTitle:"خلّينا نصنع شيئاً استثنائياً",contactText:"للتصوير، التعاون أو الاستفسار عن مشروعك، تواصل عبر منصاتنا.",footerText:"رؤية إبداعية. تفاصيل استثنائية.",rights:"جميع الحقوق محفوظة",
+promptPlaceholder:"مثلاً: أجواء فاخرة، إضاءة سينمائية، تفاصيل طبيعية...",resultPlaceholder:"سيظهر الوصف هنا بعد الضغط على تجهيز الوصف..."
+},
+fa:{
+navHome:"خانه",navWork:"نمونه‌کارها",navServices:"خدمات",navEditor:"ویرایش عکس",navAI:"آزمایشگاه هوش مصنوعی",navContact:"ارتباط",
+eyebrow:"استودیوی خلاق مستقل",heroText:"لحظه‌ها و ایده‌ها را به تصاویر و روایت‌های بصری تبدیل می‌کنیم؛ عکاسی، طراحی و محتوای تبلیغاتی.",
+viewWork:"✦ مشاهده نمونه‌کارها",startProject:"شروع پروژه ↗",stat1:"دیدگاه خلاق",stat2:"جزئیات بصری",stat3:"ایده‌های تازه",
+portfolioLabel:"نمونه‌کارها",portfolioTitle:"گالری آثار",portfolioText:"فضایی برای نمایش عکاسی، محصولات، نماهای سینمایی و ایده‌های تبلیغاتی.",
+work1:"عکاسی حرفه‌ای",work1d:"جزئیات، نورپردازی و هویت بصری.",work2:"عکاسی محصول",work2d:"نمایشی شیک برای ارزش محصول.",work3:"نماهای سینمایی",work3d:"رنگ‌ها و فضایی داستان‌گو.",
+sampleNote:"تصاویر گالری نمونه هستند؛ بعداً می‌توانید آن‌ها را با آثار خود جایگزین کنید.",
+servicesLabel:"آنچه خلق می‌کنیم",servicesTitle:"فضای خلاق ما",service1:"عکاسی",service1d:"پرتره، محصول و خاطرات.",service2:"ویدئو و تبلیغات",service2d:"ویدئوهای کوتاه و محتوای شبکه‌های اجتماعی.",service3:"طراحی خلاق",service3d:"هویت بصری و ایده‌های بازاریابی.",
+editorLabel:"کارگاه عکس",editorTitle:"آزمایشگاه ویرایش عکس",editorIntro:"عکس را انتخاب کنید، نور و رنگ را تغییر دهید و نتیجه را دانلود کنید. پردازش در مرورگر شما انجام می‌شود.",choosePhoto:"انتخاب عکس از دستگاه",brightness:"روشنایی",contrast:"کنتراست",saturation:"اشباع رنگ",warmth:"گرمی رنگ",reset:"بازنشانی",download:"دانلود عکس ویرایش‌شده ↓",privacyNote:"عکس به سرور این سایت ارسال نمی‌شود؛ پردازش در مرورگر انجام می‌شود.",
+aiTitle:"آزمایشگاه هوش مصنوعی",aiIntro:"یک توضیح خلاقانه آماده کنید، سپس ChatGPT را باز کنید و عکس را آنجا بارگذاری کنید.",aiChoose:"انتخاب عکس مرجع (اختیاری)",aiStyleLabel:"سبک موردنظر",aiPromptLabel:"جزئیات ایده را بنویسید",makePrompt:"آماده‌سازی توضیح ✧",copyPrompt:"کپی توضیح",promptResultTitle:"توضیح خلاقانه شما",openAI:"باز کردن ChatGPT ↗",aiNotice:"این بخش فقط متن توضیح را آماده می‌کند. تولید تصویر هنوز به سرویس هوش مصنوعی متصل نیست و به اتصال امن سمت سرور نیاز دارد.",
+contactLabel:"ارتباط با ما",contactTitle:"بیایید چیزی متفاوت خلق کنیم",contactText:"برای عکاسی، همکاری یا پرسش درباره پروژه با ما در ارتباط باشید.",footerText:"نگاه خلاق. جزئیات استثنایی.",rights:"تمام حقوق محفوظ است",
+promptPlaceholder:"مثلاً: فضای لوکس، نور سینمایی، جزئیات طبیعی...",resultPlaceholder:"پس از انتخاب آماده‌سازی توضیح، متن اینجا نمایش داده می‌شود..."
+},
+en:{
+navHome:"Home",navWork:"Portfolio",navServices:"Services",navEditor:"Photo Editor",navAI:"AI Lab",navContact:"Contact",
+eyebrow:"Independent Creative Studio",heroText:"We turn moments and ideas into visual stories with your identity. Photography, design, advertising content and creative experiences.",
+viewWork:"✦ Explore Portfolio",startProject:"Start a Project ↗",stat1:"Creative Vision",stat2:"Visual Details",stat3:"Fresh Ideas",
+portfolioLabel:"PORTFOLIO",portfolioTitle:"Selected Work",portfolioText:"A space for photography, products, cinematic visuals and advertising ideas.",
+work1:"Professional Photography",work1d:"Details, lighting and visual identity.",work2:"Product Photography",work2d:"Elegant visuals that highlight value.",work3:"Cinematic Scenes",work3d:"Colors and atmosphere that tell a story.",
+sampleNote:"Gallery images are examples. Replace them with your own work whenever you're ready.",
+servicesLabel:"WHAT WE CREATE",servicesTitle:"Our Creative Space",service1:"Photography",service1d:"Portraits, products and memories.",service2:"Video & Advertising",service2d:"Short videos and social media content.",service3:"Creative Design",service3d:"Visual identities and marketing ideas.",
+editorLabel:"PHOTO WORKSHOP",editorTitle:"Photo Editing Lab",editorIntro:"Choose a photo, adjust its light and color, then download the result. Processing happens in your browser.",choosePhoto:"Choose a photo from your device",brightness:"Brightness",contrast:"Contrast",saturation:"Saturation",warmth:"Warmth",reset:"Reset",download:"Download edited photo ↓",privacyNote:"Your photo is not uploaded to this site's server; editing happens in your browser.",
+aiTitle:"AI Creative Lab",aiIntro:"Prepare a creative prompt, then open ChatGPT and attach your image there to continue creating or editing.",aiChoose:"Choose a reference image (optional)",aiStyleLabel:"Desired style",aiPromptLabel:"Describe your idea",makePrompt:"Build Prompt ✧",copyPrompt:"Copy Prompt",promptResultTitle:"Your Creative Prompt",openAI:"Open ChatGPT ↗",aiNotice:"This section prepares a prompt only. AI image generation is not connected to this site yet; it requires a secure server-side AI integration.",
+contactLabel:"LET'S CONNECT",contactTitle:"Let's Create Something Exceptional",contactText:"For photography, collaboration or project inquiries, reach out through our platforms.",footerText:"Creative vision. Exceptional detail.",rights:"All rights reserved",
+promptPlaceholder:"For example: luxury atmosphere, cinematic lighting, natural details...",resultPlaceholder:"Your prompt will appear here after you select Build Prompt..."
+}
+};
+
+function applyLanguage(lang){
+  const dict=translations[lang]||translations.ar;
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==="en"?"ltr":"rtl";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key=el.dataset.i18n;
+    if(dict[key]!==undefined){
+      if(key==="portfolioTitle") el.innerHTML=lang==="en"?'Selected <span class="gold">Work</span>':lang==="fa"?'گالری <span class="gold">آثار</span>':'معرض <span class="gold">الأعمال</span>';
+      else if(key==="servicesTitle") el.innerHTML=lang==="en"?'Our <span class="gold">Creative Space</span>':lang==="fa"?'فضای <span class="gold">خلاق ما</span>':'مساحتنا <span class="gold">الإبداعية</span>';
+      else if(key==="editorTitle") el.innerHTML=lang==="en"?'Photo <span class="gold">Editing Lab</span>':lang==="fa"?'آزمایشگاه <span class="gold">ویرایش عکس</span>':'مختبر <span class="gold">تعديل الصور</span>';
+      else if(key==="aiTitle") el.innerHTML=lang==="en"?'AI <span class="gold">Creative Lab</span>':lang==="fa"?'آزمایشگاه <span class="gold">هوش مصنوعی</span>':'مختبر <span class="gold">الذكاء الاصطناعي</span>';
+      else if(key==="contactTitle") el.innerHTML=lang==="en"?"Let's Create Something <span class='gold'>Exceptional</span>":lang==="fa"?'بیایید چیزی <span class="gold">متفاوت</span> خلق کنیم':'خلّينا نصنع شيئاً <span class="gold">استثنائياً</span>';
+      else el.textContent=dict[key];
+    }
+  });
+  $("aiPrompt").placeholder=dict.promptPlaceholder;
+  $("promptResult").placeholder=dict.resultPlaceholder;
+}
+$("language").addEventListener("change",e=>applyLanguage(e.target.value));
 
 let originalImage=null;
-let objectURL=null;
-const sliders=["brightness","contrast","saturation","sepia"];
+const canvas=document.createElement("canvas");
+const ctx=canvas.getContext("2d");
+const preview=$("photoPreview");
+const ranges=["brightness","contrast","saturation","sepia"];
 
-function filters(){
- return `brightness(${$("brightness").value}%) contrast(${$("contrast").value}%) saturate(${$("saturation").value}%) sepia(${$("sepia").value}%)`;
+function notify(message){
+  const toast=$("toast");toast.textContent=message;toast.classList.add("show");
+  clearTimeout(notify.timer);notify.timer=setTimeout(()=>toast.classList.remove("show"),2600);
 }
-function refresh(){
- $("preview").style.filter=filters();
- sliders.forEach(id=>$(id+"Out").textContent=$(id).value+"%");
+function loadImageFile(file,img,onLoad){
+  if(!file||!file.type.startsWith("image/")){notify("يرجى اختيار ملف صورة صالح.");return;}
+  const url=URL.createObjectURL(file);
+  img.onload=()=>{if(onLoad)onLoad(img);URL.revokeObjectURL(url)};
+  img.onerror=()=>{URL.revokeObjectURL(url);notify("تعذر فتح هذه الصورة.");};
+  img.src=url;img.hidden=false;
 }
-function resetEditor(){
- $("brightness").value=100;
- $("contrast").value=100;
- $("saturation").value=100;
- $("sepia").value=0;
- refresh();
-}
-$("upload").addEventListener("change",e=>{
- const file=e.target.files&&e.target.files[0];
- if(!file)return;
- if(!file.type.startsWith("image/")){
-  $("editStatus").textContent="اختر ملف صورة صالحًا.";
-  return;
- }
- if(file.size>15*1024*1024){
-  $("editStatus").textContent="حجم الصورة أكبر من 15 ميغابايت. اختر صورة أصغر.";
-  e.target.value="";
-  return;
- }
- if(objectURL)URL.revokeObjectURL(objectURL);
- objectURL=URL.createObjectURL(file);
- const img=new Image();
- img.onload=()=>{
-  originalImage=img;
-  $("preview").src=objectURL;
-  $("preview").hidden=false;
-  sliders.forEach(id=>$(id).disabled=false);
-  $("reset").disabled=false;
-  $("download").disabled=false;
-  resetEditor();
-  $("editStatus").textContent="تم تحميل الصورة. عدّلها ثم نزّل النتيجة.";
- };
- img.onerror=()=>{
-  $("editStatus").textContent="تعذر فتح الصورة. جرّب ملفًا آخر.";
- };
- img.src=objectURL;
+$("photoInput").addEventListener("change",e=>{
+  const file=e.target.files[0];if(!file)return;
+  loadImageFile(file,preview,()=>{
+    originalImage=preview;
+    ranges.forEach(id=>$(id).value=id==="sepia"?0:100);
+    updatePhoto();
+  });
 });
-sliders.forEach(id=>$(id).addEventListener("input",refresh));
-$("reset").addEventListener("click",resetEditor);
+function updatePhoto(){
+  ranges.forEach(id=>{
+    const val=$(id).value;
+    $(id+"Value").textContent=val+"%";
+  });
+  if(!originalImage||!originalImage.naturalWidth)return;
+  preview.style.filter=`brightness(${$("brightness").value}%) contrast(${$("contrast").value}%) saturate(${$("saturation").value}%) sepia(${$("sepia").value}%)`;
+}
+ranges.forEach(id=>$(id).addEventListener("input",updatePhoto));
+$("resetPhoto").addEventListener("click",()=>{
+  ranges.forEach(id=>$(id).value=id==="sepia"?0:100);updatePhoto();
+});
+$("downloadPhoto").addEventListener("click",()=>{
+  if(!originalImage||!originalImage.naturalWidth){notify("اختَر صورة أولاً.");return;}
+  const w=originalImage.naturalWidth,h=originalImage.naturalHeight;
+  const maxSide=6000,scale=Math.min(1,maxSide/Math.max(w,h));
+  canvas.width=Math.round(w*scale);canvas.height=Math.round(h*scale);
+  ctx.filter=`brightness(${$("brightness").value}%) contrast(${$("contrast").value}%) saturate(${$("saturation").value}%) sepia(${$("sepia").value}%)`;
+  ctx.drawImage(originalImage,0,0,canvas.width,canvas.height);ctx.filter="none";
+  canvas.toBlob(blob=>{
+    if(!blob){notify("تعذر تجهيز الصورة للتنزيل.");return;}
+    const url=URL.createObjectURL(blob),a=document.createElement("a");
+    a.href=url;a.download="SeVeN-Studio7-edited.jpg";document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1500);
+  },"image/jpeg",.94);
+});
 
-$("download").addEventListener("click",()=>{
- if(!originalImage)return;
- const maxSide=2400;
- const scale=Math.min(1,maxSide/Math.max(originalImage.naturalWidth,originalImage.naturalHeight));
- const canvas=document.createElement("canvas");
- canvas.width=Math.round(originalImage.naturalWidth*scale);
- canvas.height=Math.round(originalImage.naturalHeight*scale);
- const ctx=canvas.getContext("2d");
- ctx.filter=filters();
- ctx.drawImage(originalImage,0,0,canvas.width,canvas.height);
- canvas.toBlob(blob=>{
-  if(!blob){
-   $("editStatus").textContent="تعذر إنشاء الصورة. جرّب صورة أصغر.";
-   return;
+$("aiPhoto").addEventListener("change",e=>{
+  const file=e.target.files[0];if(file)loadImageFile(file,$("aiPreview"));
+});
+$("makePrompt").addEventListener("click",()=>{
+  const style=$("aiStyle").value;
+  const details=$("aiPrompt").value.trim();
+  const lang=$("language").value;
+  let start=lang==="en"?"Create a high-quality image based on my uploaded reference. Preserve the main subject and important details. Style: ":lang==="fa"?"بر اساس تصویر مرجع بارگذاری‌شده، تصویری باکیفیت بساز. سوژه اصلی و جزئیات مهم را حفظ کن. سبک: ":"بر اساس الصورة المرجعية التي سأرفقها، أنشئ صورة عالية الجودة مع الحفاظ على الموضوع والتفاصيل المهمة. الأسلوب: ";
+  let end=lang==="en"?". Refined composition, realistic textures, professional lighting, premium color grading, clean details. Do not distort identity or add unwanted text.":lang==="fa"?"، ترکیب‌بندی دقیق، بافت طبیعی، نورپردازی حرفه‌ای و رنگ‌بندی لوکس. هویت سوژه را تغییر نده و متن ناخواسته اضافه نکن.":"، بتكوين متوازن وخامات طبيعية وإضاءة احترافية وألوان فاخرة. لا تغيّر هوية الشخص ولا تضف نصوصاً غير مطلوبة.";
+  $("promptResult").value=start+style+(details?" — "+details:"")+end;
+  notify(lang==="en"?"Prompt prepared.":lang==="fa"?"توضیح آماده شد.":"تم تجهيز الوصف.");
+});
+$("copyPrompt").addEventListener("click",async()=>{
+  const field=$("promptResult");
+  if(!field.value.trim()){notify("جهّز الوصف أولاً.");return;}
+  try{
+    await navigator.clipboard.writeText(field.value);notify("تم نسخ الوصف.");
+  }catch(e){
+    field.focus();field.select();
+    try{document.execCommand("copy");notify("جرّب نسخ الوصف المحدد.");}
+    catch(err){notify("حدّد النص وانسخه يدوياً.");}
   }
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=url;
-  a.download="seven-studio7-edited.jpg";
-  a.click();
-  setTimeout(()=>URL.revokeObjectURL(url),1500);
-  $("editStatus").textContent="جهزت الصورة المعدلة للتنزيل.";
- },"image/jpeg",0.94);
 });
 
-let aiImageFile=null;
-$("aiUpload").addEventListener("change",e=>{
- aiImageFile=e.target.files&&e.target.files[0]||null;
- $("aiFileName").textContent=aiImageFile?
-  "الصورة المختارة: "+aiImageFile.name:"لم تختر صورة بعد.";
-});
-$("aiRequest").addEventListener("click",()=>{
- if(!aiImageFile){
-  $("aiStatus").textContent="ارفع صورة أولًا.";
-  return;
- }
- if(!$("prompt").value.trim()){
-  $("aiStatus").textContent="اكتب وصف التعديل المطلوب أولًا.";
-  return;
- }
- $("aiStatus").textContent="تم تجهيز وصفك، لكن إنشاء الصورة لم يُفعّل بعد. نحتاج ربط خدمة AI آمنة حتى تُعالج الصورة وتعيد النتيجة.";
-});
-
-const dictionary={
- ar:{dir:"rtl",title:"رؤيتك تتحول إلى فن استثنائي",home:"الرئيسية",portfolio:"أعمالنا",editor:"محرر الصور",ai:"مختبر AI",contact:"التواصل"},
- fa:{dir:"rtl",title:"دیدگاه شما به هنری استثنایی تبدیل می‌شود",home:"خانه",portfolio:"نمونه‌کارها",editor:"ویرایشگر عکس",ai:"آزمایشگاه هوش مصنوعی",contact:"تماس"},
- en:{dir:"ltr",title:"Turn Your Vision Into Exceptional Art",home:"Home",portfolio:"Portfolio",editor:"Photo Editor",ai:"AI Lab",contact:"Contact"}
-};
-$("lang").addEventListener("change",e=>{
- const lang=e.target.value,t=dictionary[lang];
- document.documentElement.lang=lang;
- document.documentElement.dir=t.dir;
- document.querySelectorAll(".links a").forEach(a=>{
-  const k=a.getAttribute("href").slice(1);
-  a.textContent=t[k]||a.textContent;
- });
-});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+applyLanguage("ar");
 </script>
 </body>
 </html>
