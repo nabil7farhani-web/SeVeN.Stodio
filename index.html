@@ -1,361 +1,376 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0a0a">
-<meta name="description" content="SaVaN.Stodio7 — Photography, Cinematic Video, Personalized Photo Gifts and AI Creativity.">
-<title>SaVaN.Stodio7 | Creative Studio</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>SeVeN Studio7 | Creative Lab</title>
 <style>
-:root {
-  --bg:#090909;
-  --panel:#141414;
-  --red:#c62835;
-  --gold:#c6a56a;
-  --white:#f7f3ec;
-  --muted:#aaa39b;
-  --line:rgba(198,165,106,.27);
+:root{
+ --bg:#090909;--panel:#111;--line:#302626;
+ --white:#f7f4ef;--muted:#aaa29f;--red:#c52c3b;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--bg);color:var(--white);
-  font-family:Georgia,"Times New Roman",serif;
-  line-height:1.8;
+ margin:0;background:var(--bg);color:var(--white);
+ font-family:Arial,Tahoma,sans-serif;line-height:1.8;
+ text-align:center;
 }
 a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
-button,a{ -webkit-tap-highlight-color:transparent }
-img{display:block;width:100%;object-fit:cover}
-.wrap{width:min(1160px,92%);margin:auto}
-.gold{color:var(--gold)}
-.red{color:#ff5965}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.container{width:min(1080px,92%);margin:auto}
 header{
-  position:sticky;top:0;z-index:10;
-  background:rgba(9,9,9,.94);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
+ position:sticky;top:0;z-index:20;
+ background:#090909ed;backdrop-filter:blur(12px);
+ border-bottom:1px solid var(--line);
 }
-.nav{
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 0;
+nav{
+ min-height:75px;display:flex;justify-content:center;
+ align-items:center;gap:18px;flex-wrap:wrap;padding:15px 0;
 }
-.logo{font-size:24px;letter-spacing:1px;font-weight:bold}
-.logo span{color:var(--red)}
-.navlinks{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
-.navlinks a:hover{color:var(--gold)}
-.langs{display:flex;gap:5px}
-.langs button{
-  border:1px solid var(--line);background:#151515;color:white;
-  padding:6px 9px;border-radius:5px;cursor:pointer;font-size:12px;
+.brand{font-size:22px;font-weight:900;letter-spacing:1px}
+.brand span,.red{color:var(--red)}
+.links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.links a{font-size:13px;color:#ddd}
+.links a:hover{color:#ff6674}
+select,.field,textarea{
+ width:100%;background:#0c0c0c;color:white;
+ border:1px solid #3a3030;border-radius:4px;padding:12px;
 }
+select{width:auto}
 .hero{
-  min-height:570px;display:flex;align-items:center;
-  background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.25)),
-  url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85") center/cover;
-  border-bottom:1px solid var(--line);
+ padding:95px 0 85px;
+ background:radial-gradient(ellipse at top,#341017 0%,#151010 32%,#090909 72%);
+ border-bottom:1px solid var(--line);
 }
-.hero-inner{padding:80px 0;max-width:720px}
-.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px}
-h1{font-size:clamp(40px,7vw,76px);line-height:1.12;margin:18px 0}
-h2{font-size:clamp(27px,4vw,42px);line-height:1.25;margin:0 0 14px}
-h3{margin:14px 0 8px}
-p{color:#c5c0b9}
-.hero p{max-width:600px;font-size:17px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.eyebrow{font-size:11px;letter-spacing:4px;color:#e15a68}
+h1{font-size:clamp(39px,7vw,76px);line-height:1.2;margin:20px 0}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.35;margin:0 0 12px}
+p{color:var(--muted)}
+.hero p{max-width:650px;margin:0 auto}
 .btn{
-  display:inline-flex;justify-content:center;align-items:center;
-  padding:12px 20px;border:1px solid var(--gold);border-radius:3px;
-  background:var(--gold);color:#100f0d;font-weight:bold;cursor:pointer;
-  transition:.25s;
+ display:inline-flex;align-items:center;justify-content:center;
+ gap:8px;padding:12px 19px;border:1px solid #514040;
+ background:#151212;color:white;border-radius:4px;
 }
-.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
-.btn.outline{background:transparent;color:var(--white)}
-.btn.redbtn{background:var(--red);border-color:var(--red);color:white}
-section{padding:76px 0;scroll-margin-top:85px}
-.section-head{max-width:700px;margin-bottom:32px}
-.section-head p{margin-top:8px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{
-  background:var(--panel);border:1px solid var(--line);
-  overflow:hidden;border-radius:5px;transition:.25s;
+.btn.primary{background:var(--red);border-color:var(--red)}
+.btn:hover{filter:brightness(1.2)}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}
+section{padding:72px 0}
+.section-head{margin:0 auto 30px;max-width:700px}
+.rule{width:55px;height:2px;background:var(--red);margin:17px auto}
+.panel{
+ background:linear-gradient(145deg,#151212,#0d0d0d);
+ border:1px solid var(--line);padding:25px;border-radius:7px;
 }
-.card:hover{transform:translateY(-5px);border-color:var(--gold)}
-.card img{height:245px}
-.card-body{padding:20px}
-.card-body p{font-size:14px;margin-bottom:0}
-.tag{color:var(--gold);font-size:12px;letter-spacing:1px}
-.products img{height:260px}
-.products .card-body{min-height:145px}
-.dark-section{background:#101010;border-block:1px solid var(--line)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.split img{height:390px;border-radius:4px;border:1px solid var(--line)}
-.feature-list{padding:0;list-style:none}
-.feature-list li{padding:8px 0;border-bottom:1px solid #292929;color:#ddd}
-.feature-list li::before{content:"✦ ";color:var(--gold)}
-.toolbox{
-  padding:25px;background:#101010;border:1px solid var(--line);border-radius:5px;
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.work{
+ overflow:hidden;background:#111;border:1px solid var(--line);
 }
-textarea,input{
-  width:100%;padding:13px;background:#080808;color:white;
-  border:1px solid #49433b;border-radius:4px;outline:none;
+.work img{width:100%;height:210px;object-fit:cover;display:block}
+.work h3{font-size:17px;margin:12px}
+.work p{font-size:13px;margin:0 12px 15px}
+.lab{max-width:800px;margin:auto}
+.drop{
+ display:block;padding:30px 15px;border:1px dashed #8e3943;
+ background:#100d0e;border-radius:6px;cursor:pointer;
 }
-textarea:focus,input:focus{border-color:var(--gold)}
-textarea{min-height:135px;resize:vertical}
-.small-note{font-size:12px;color:var(--muted)}
-.tool-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.music-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.music-links a{border:1px solid var(--line);padding:12px 16px;border-radius:3px}
-.music-links a:hover{border-color:var(--gold);color:var(--gold)}
-.contact-box{
-  text-align:center;padding:38px 22px;background:linear-gradient(135deg,#181512,#0b0b0b);
-  border:1px solid var(--line);
+.drop strong{display:block;font-size:19px}
+.drop input{display:block;max-width:100%;margin:14px auto 0}
+.preview{
+ width:100%;max-height:520px;object-fit:contain;
+ display:block;margin:20px auto;background:#050505;
 }
-.socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-.socials a{padding:10px 15px;border:1px solid var(--line);border-radius:3px}
-.socials a:hover{background:var(--red);border-color:var(--red)}
-footer{padding:25px 0;border-top:1px solid var(--line);text-align:center}
-footer p{font-size:13px}
-@media(max-width:800px){
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .split{grid-template-columns:1fr}
-  .split img{height:300px}
-  .nav{justify-content:center}
-  .navlinks{justify-content:center}
-  .hero{min-height:520px}
+.controls{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:17px;margin-top:22px;text-align:center;
 }
-@media(max-width:520px){
-  .grid{grid-template-columns:1fr}
-  .card img,.products img{height:250px}
-  section{padding:55px 0}
-  .hero-inner{padding:60px 0}
-  .navlinks{gap:10px;font-size:12px}
+.control{padding:13px;background:#0b0b0b;border:1px solid #292323}
+.control label{display:block;margin-bottom:8px;font-size:14px}
+input[type=range]{width:100%;accent-color:var(--red)}
+input[type=file]{color:#ddd}
+input[type=range]:disabled{opacity:.4}
+textarea{min-height:110px;resize:vertical}
+.status{font-size:13px;min-height:28px;margin:12px 0}
+.note{font-size:12px}
+.socials{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.socials a{border:1px solid #433438;padding:10px 16px}
+.socials a:hover{background:var(--red)}
+footer{border-top:1px solid var(--line);padding:25px;color:var(--muted);font-size:12px}
+[hidden]{display:none!important}
+@media(max-width:650px){
+ .hero{padding:70px 0}
+ section{padding:52px 0}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .work img{height:145px}
+ .work h3{font-size:14px}
+ .panel{padding:15px}
+ .controls{grid-template-columns:1fr}
+ nav{gap:12px}
 }
+@media(max-width:380px){.grid{grid-template-columns:1fr}.work img{height:200px}}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="logo" href="#home">SaVaN<span>.</span>Stodio7</a>
-    <nav class="navlinks">
-      <a href="#studio" data-ar="الاستوديو" data-fa="استودیو" data-en="Studio">الاستوديو</a>
-      <a href="#gifts" data-ar="هدايا الصور" data-fa="هدایای عکس" data-en="Photo Gifts">هدايا الصور</a>
-      <a href="#ai" data-ar="مختبر AI" data-fa="آزمایشگاه هوش مصنوعی" data-en="AI Lab">مختبر AI</a>
-      <a href="#music" data-ar="الموسيقى" data-fa="موسیقی" data-en="Music">الموسيقى</a>
-      <a href="#contact" data-ar="اتصل بنا" data-fa="تماس" data-en="Contact">اتصل بنا</a>
-    </nav>
-    <div class="langs">
-      <button onclick="setLang('ar')">عربي</button>
-      <button onclick="setLang('fa')">فارسی</button>
-      <button onclick="setLang('en')">EN</button>
-    </div>
-  </div>
+<nav class="container">
+ <a href="#home" class="brand">SeVeN<span>.</span>Studio7</a>
+ <div class="links">
+  <a href="#home" data-ar="الرئيسية" data-fa="خانه" data-en="Home">الرئيسية</a>
+  <a href="#portfolio" data-ar="أعمالنا" data-fa="نمونه‌کارها" data-en="Portfolio">أعمالنا</a>
+  <a href="#editor" data-ar="محرر الصور" data-fa="ویرایشگر عکس" data-en="Photo Editor">محرر الصور</a>
+  <a href="#ai" data-ar="مختبر AI" data-fa="آزمایشگاه هوش مصنوعی" data-en="AI Lab">مختبر AI</a>
+  <a href="#contact" data-ar="التواصل" data-fa="تماس" data-en="Contact">التواصل</a>
+ </div>
+ <select id="lang" aria-label="Language">
+  <option value="ar">العربية</option>
+  <option value="fa">فارسی</option>
+  <option value="en">English</option>
+ </select>
+</nav>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="wrap hero-inner">
-    <div class="eyebrow">Photography · Film · Creative Technology</div>
-    <h1>
-      <span data-ar="الفنّ يبدأ" data-fa="هنر آغاز می‌شود" data-en="Where Art">الفنّ يبدأ</span><br>
-      <span class="gold" data-ar="من رؤيتك." data-fa="از نگاه تو." data-en="Begins With You.">من رؤيتك.</span>
-    </h1>
-    <p data-ar="نحوّل اللحظات إلى صور، والأفكار إلى تصاميم، والذكريات إلى هدايا تبقى معك." data-fa="لحظه‌ها را به تصویر، ایده‌ها را به طراحی و خاطره‌ها را به هدایایی ماندگار تبدیل می‌کنیم." data-en="We turn moments into photographs, ideas into designs, and memories into lasting gifts.">نحوّل اللحظات إلى صور، والأفكار إلى تصاميم، والذكريات إلى هدايا تبقى معك.</p>
-    <div class="actions">
-      <a class="btn redbtn" href="#gifts" data-ar="اكتشف الهدايا" data-fa="دیدن هدایا" data-en="Explore Gifts">اكتشف الهدايا</a>
-      <a class="btn outline" href="#contact" data-ar="اطلب شغلك" data-fa="سفارش بده" data-en="Request a Project">اطلب شغلك</a>
-    </div>
+ <div class="container">
+  <div class="eyebrow">PHOTOGRAPHY · DESIGN · ARTIFICIAL INTELLIGENCE</div>
+  <h1>رؤيتك تتحول إلى<br><span class="red">فن استثنائي</span></h1>
+  <p>استوديو إبداعي للتصوير الاحترافي والفيديو والتصميم، مع مختبر أدوات الصور وتجارب الذكاء الاصطناعي.</p>
+  <div class="actions">
+   <a class="btn primary" href="#portfolio">اكتشف الاستوديو</a>
+   <a class="btn" href="#editor">جرّب محرر الصور</a>
   </div>
+ </div>
 </section>
 
-<section id="studio">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">01 / The Studio</div>
-      <h2 data-ar="تصوير يحكي قصتك" data-fa="عکاسی، روایت داستان تو" data-en="Photography That Tells Your Story">تصوير يحكي قصتك</h2>
-      <p data-ar="من الصور الشخصية إلى المحتوى التجاري، نصنع مظهراً أنيقاً يناسب هويتك." data-fa="از پرتره تا محتوای تجاری، تصویری حرفه‌ای متناسب با هویت شما می‌سازیم." data-en="From portraits to commercial content, we create a polished look for your brand.">من الصور الشخصية إلى المحتوى التجاري، نصنع مظهراً أنيقاً يناسب هويتك.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="Camera and photography">
-        <div class="card-body"><span class="tag">01 — PHOTO</span><h3 data-ar="التصوير الاحترافي" data-fa="عکاسی حرفه‌ای" data-en="Professional Photography">التصوير الاحترافي</h3><p data-ar="صور شخصية، منتجات، مناسبات، وصور إعلانية." data-fa="پرتره، محصول، مناسبت و عکس تبلیغاتی." data-en="Portraits, products, events, and advertising photography.">صور شخصية، منتجات، مناسبات، وصور إعلانية.</p></div>
-      </article>
-      <article class="card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="Video production camera">
-        <div class="card-body"><span class="tag">02 — FILM</span><h3 data-ar="فيديو وإعلانات" data-fa="ویدیو و تبلیغات" data-en="Video & Advertising">فيديو وإعلانات</h3><p data-ar="ريلز، فيديوهات منتجات، ومحتوى بصري للسوشيال ميديا." data-fa="ریلز، ویدیو محصول و محتوای شبکه‌های اجتماعی." data-en="Reels, product films, and social media visuals.">ريلز، فيديوهات منتجات، ومحتوى بصري للسوشيال ميديا.</p></div>
-      </article>
-      <article class="card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=900&q=80" alt="Creative design workspace">
-        <div class="card-body"><span class="tag">03 — DESIGN</span><h3 data-ar="تصميم ومحتوى AI" data-fa="طراحی و محتوای هوش مصنوعی" data-en="Design & AI Content">تصميم ومحتوى AI</h3><p data-ar="أفكار بصرية، ملصقات، هويات إعلانية، وبرومبتات إبداعية." data-fa="ایده‌های بصری، پوستر، هویت تبلیغاتی و پرامپت." data-en="Visual concepts, posters, advertising identity, and creative prompts.">أفكار بصرية، ملصقات، هويات إعلانية، وبرومبتات إبداعية.</p></div>
-      </article>
-    </div>
+<section id="portfolio">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">OUR CREATIVE WORLD</div>
+   <h2>عالم SeVeN Studio7</h2>
+   <div class="rule"></div>
+   <p>مساحة للأفكار الجريئة والتصوير والفن البصري.</p>
   </div>
+  <div class="grid">
+   <article class="work">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=700&q=80" alt="Photography">
+    <h3>التصوير الاحترافي</h3><p>لحظات بتفاصيل فنية.</p>
+   </article>
+   <article class="work">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="Video">
+    <h3>الفيديو السينمائي</h3><p>قصص تُروى بالصورة.</p>
+   </article>
+   <article class="work">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=700&q=80" alt="Design">
+    <h3>التصميم الإبداعي</h3><p>هوية بصرية مميزة.</p>
+   </article>
+  </div>
+ </div>
 </section>
 
-<section class="dark-section" id="gifts">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">02 / Personalized Memories</div>
-      <h2 data-ar="ذكرياتك… بتصميم استثنائي" data-fa="خاطره‌هایت، با طراحی ویژه" data-en="Your Memories, Beautifully Made">ذكرياتك… بتصميم استثنائي</h2>
-      <p data-ar="أفكار هدايا شخصية قابلة للتخصيص حسب الصورة والاسم والمناسبة. اسألنا عن المقاسات والخامات المتوفرة." data-fa="ایده‌های هدیه شخصی با عکس، نام و مناسبت دلخواه. درباره اندازه و جنس موجود سؤال کنید." data-en="Personalized gifts using your photo, name, or occasion. Ask us about available sizes and materials.">أفكار هدايا شخصية قابلة للتخصيص حسب الصورة والاسم والمناسبة. اسألنا عن المقاسات والخامات المتوفرة.</p>
-    </div>
-    <div class="grid products">
-      <article class="card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80" alt="Wall art and framed pictures">
-        <div class="card-body"><span class="tag">WALL COLLECTION</span><h3 data-ar="صور وإطارات معلّقة" data-fa="عکس و قاب دیواری" data-en="Hanging Photo Frames">صور وإطارات معلّقة</h3><p data-ar="صور جدارية وقطع ديكور شخصية للبيت أو المكتب." data-fa="عکس دیواری و دکور شخصی برای خانه یا دفتر." data-en="Personalized wall prints and decor for home or office.">صور جدارية وقطع ديكور شخصية للبيت أو المكتب.</p></div>
-      </article>
-      <article class="card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=80" alt="Desk and interior decor">
-        <div class="card-body"><span class="tag">DESK COLLECTION</span><h3 data-ar="صور مكتبية وديكور" data-fa="عکس رومیزی و دکور" data-en="Desktop Photo Gifts">صور مكتبية وديكور</h3><p data-ar="ذكريات على مكتبك بتنسيق كلاسيكي وأنيق." data-fa="خاطره‌ها روی میز با چیدمانی کلاسیک و زیبا." data-en="Classic, elegant memories for your desk.">ذكريات على مكتبك بتنسيق كلاسيكي وأنيق.</p></div>
-      </article>
-      <article class="card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80" alt="Jewelry gift">
-        <div class="card-body"><span class="tag">PERSONAL GIFTS</span><h3 data-ar="قلائد وأساور وميداليات" data-fa="گردنبند، دستبند و جاکلیدی" data-en="Necklaces, Bracelets & Keychains">قلائد وأساور وميداليات</h3><p data-ar="أفكار لهدايا تحمل صورتك أو ذكرى خاصة، حسب الخامات المتاحة." data-fa="هدیه‌هایی با عکس یا خاطره شخصی، بر اساس مواد موجود." data-en="Gifts featuring a photo or special memory, subject to available materials.">أفكار لهدايا تحمل صورتك أو ذكرى خاصة، حسب الخامات المتاحة.</p></div>
-      </article>
-    </div>
-    <div class="actions">
-      <a class="btn redbtn" href="https://wa.me/989335960566?text=Hello%20SaVaN%20Studio7" target="_blank" rel="noopener noreferrer" data-ar="اطلب هديتك عبر واتساب" data-fa="سفارش هدیه در واتساپ" data-en="Order a Gift on WhatsApp">اطلب هديتك عبر واتساب</a>
-    </div>
+<section id="editor">
+ <div class="container lab">
+  <div class="section-head">
+   <div class="eyebrow">YOUR IMAGE · YOUR VISION</div>
+   <h2>مختبر تعديل الصور</h2>
+   <div class="rule"></div>
+   <p>ارفع صورة من جهازك، عدّل الإضاءة والألوان، ثم نزّل النتيجة. المعالجة الأساسية تتم داخل المتصفح.</p>
   </div>
+  <div class="panel">
+   <label class="drop" for="upload">
+    <strong>＋ اختر صورتك</strong>
+    <span class="note">JPG أو PNG أو WebP — تبقى الصورة على جهازك أثناء التعديل المحلي.</span>
+    <input id="upload" type="file" accept="image/jpeg,image/png,image/webp">
+   </label>
+   <img id="preview" class="preview" alt="معاينة الصورة المعدلة" hidden>
+   <div class="controls">
+    <div class="control">
+     <label for="brightness">الإضاءة <output id="brightnessOut">100%</output></label>
+     <input id="brightness" type="range" min="30" max="180" value="100" disabled>
+    </div>
+    <div class="control">
+     <label for="contrast">التباين <output id="contrastOut">100%</output></label>
+     <input id="contrast" type="range" min="30" max="180" value="100" disabled>
+    </div>
+    <div class="control">
+     <label for="saturation">تشبع الألوان <output id="saturationOut">100%</output></label>
+     <input id="saturation" type="range" min="0" max="200" value="100" disabled>
+    </div>
+    <div class="control">
+     <label for="sepia">تأثير كلاسيكي <output id="sepiaOut">0%</output></label>
+     <input id="sepia" type="range" min="0" max="100" value="0" disabled>
+    </div>
+   </div>
+   <div class="actions">
+    <button class="btn" id="reset" disabled>إعادة الضبط</button>
+    <button class="btn primary" id="download" disabled>تنزيل الصورة المعدلة</button>
+   </div>
+   <p id="editStatus" class="status" aria-live="polite">اختر صورة حتى تبدأ التعديل.</p>
+  </div>
+ </div>
 </section>
 
 <section id="ai">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">03 / AI Creative Lab</div>
-      <h2 data-ar="مختبر الإبداع بالذكاء الاصطناعي" data-fa="آزمایشگاه خلاقیت هوش مصنوعی" data-en="AI Creative Lab">مختبر الإبداع بالذكاء الاصطناعي</h2>
-      <p data-ar="اكتب فكرتك، حسّن وصفها، ثم افتح خدمة خارجية لتجربة إنشاء الصور." data-fa="ایده‌ات را بنویس، متن را بهتر کن و سپس سرویس بیرونی ساخت تصویر را باز کن." data-en="Write your idea, improve the prompt, then open an external image-generation service.">اكتب فكرتك، حسّن وصفها، ثم افتح خدمة خارجية لتجربة إنشاء الصور.</p>
-    </div>
-    <div class="split">
-      <div class="toolbox">
-        <label for="prompt" data-ar="اكتب فكرة الصورة" data-fa="ایده تصویر را بنویس" data-en="Describe your image">اكتب فكرة الصورة</label>
-        <textarea id="prompt" placeholder="مثال: عطر فاخر على طاولة سوداء، إضاءة سينمائية..."></textarea>
-        <div class="tool-buttons">
-          <button class="btn" onclick="improvePrompt()" data-ar="تحسين البرومبت" data-fa="بهبود پرامپت" data-en="Improve Prompt">تحسين البرومبت</button>
-          <button class="btn redbtn" onclick="openImageAI()" data-ar="جرّب إنشاء الصور" data-fa="ساخت تصویر را امتحان کن" data-en="Try Image Generation">جرّب إنشاء الصور</button>
-          <button class="btn outline" onclick="copyPrompt()" data-ar="نسخ النص" data-fa="کپی متن" data-en="Copy Text">نسخ النص</button>
-        </div>
-        <p id="aiMessage" class="small-note" aria-live="polite">مولّد الصور خدمة خارجية، وقد يطلب تسجيل الدخول أو يفرض حدوداً مجانية.</p>
-      </div>
-      <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Creative visual inspiration">
-    </div>
+ <div class="container lab">
+  <div class="section-head">
+   <div class="eyebrow">AI CREATIVE LAB</div>
+   <h2>مختبر الذكاء الاصطناعي</h2>
+   <div class="rule"></div>
+   <p>حضّر الصورة واكتب وصف التعديل الذي تريده. هذه الواجهة جاهزة للربط بخدمة ذكاء اصطناعي حقيقية.</p>
   </div>
-</section>
-
-<section class="dark-section" id="music">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">04 / Music Universe</div>
-      <h2 data-ar="عالم الموسيقى" data-fa="دنیای موسیقی" data-en="Music Universe">عالم الموسيقى</h2>
-      <p data-ar="استكشف الموسيقى، اعثر على أعمال تسمح تراخيصها بالاستخدام، أو تعرّف على منصات مشاركة موسيقاك." data-fa="موسیقی کشف کن، آثار دارای مجوز مناسب پیدا کن یا با پلتفرم‌های انتشار موسیقی آشنا شو." data-en="Discover music, find tracks with suitable licenses, or explore platforms for sharing your own music.">استكشف الموسيقى، اعثر على أعمال تسمح تراخيصها بالاستخدام، أو تعرّف على منصات مشاركة موسيقاك.</p>
-    </div>
-    <div class="grid">
-      <article class="card"><div class="card-body"><span class="tag">LISTEN</span><h3>SoundCloud</h3><p data-ar="اكتشف أعمالاً وموسيقى من فنانين مختلفين." data-fa="آثار و موسیقی هنرمندان مختلف را کشف کن." data-en="Discover tracks from different artists.">اكتشف أعمالاً وموسيقى من فنانين مختلفين.</p><a class="btn outline" href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer">Open SoundCloud ↗</a></div></article>
-      <article class="card"><div class="card-body"><span class="tag">SHARE YOUR MUSIC</span><h3>Bandcamp</h3><p data-ar="تعرّف على خيارات مشاركة وبيع أعمالك الموسيقية." data-fa="گزینه‌های انتشار و فروش آثار موسیقی را بررسی کن." data-en="Explore options for sharing and selling your music.">تعرّف على خيارات مشاركة وبيع أعمالك الموسيقية.</p><a class="btn outline" href="https://bandcamp.com/" target="_blank" rel="noopener noreferrer">Open Bandcamp ↗</a></div></article>
-      <article class="card"><div class="card-body"><span class="tag">LICENSED MUSIC</span><h3>Free Music Archive</h3><p data-ar="ابحث عن مقاطع موسيقية واقرأ ترخيص كل مقطع قبل تنزيله أو استخدامه." data-fa="موسیقی پیدا کن و پیش از دانلود یا استفاده، مجوز هر قطعه را بخوان." data-en="Find music and check each track's license before downloading or using it.">ابحث عن مقاطع موسيقية واقرأ ترخيص كل مقطع قبل تنزيله أو استخدامه.</p><a class="btn outline" href="https://freemusicarchive.org/" target="_blank" rel="noopener noreferrer">Explore Music ↗</a></div></article>
-    </div>
-    <p class="small-note" data-ar="ملاحظة: ليس كل ما يمكن الاستماع إليه مجاناً متاحاً للتنزيل أو الاستخدام التجاري. احترم حقوق الفنانين والتراخيص." data-fa="توجه: هر موسیقی رایگان برای شنیدن، لزوماً برای دانلود یا استفاده تجاری آزاد نیست. حقوق هنرمندان را رعایت کن." data-en="Note: Music that is free to stream is not necessarily free to download or use commercially. Respect artist rights and licenses.">ملاحظة: ليس كل ما يمكن الاستماع إليه مجاناً متاحاً للتنزيل أو الاستخدام التجاري. احترم حقوق الفنانين والتراخيص.</p>
+  <div class="panel">
+   <label class="drop" for="aiUpload">
+    <strong>＋ ارفع صورة لمشروع AI</strong>
+    <span class="note">اختر صورة من هاتفك. لن تُرسل إلى خدمة خارجية في هذه النسخة.</span>
+    <input id="aiUpload" type="file" accept="image/jpeg,image/png,image/webp">
+   </label>
+   <p id="aiFileName" class="status" aria-live="polite">لم تختر صورة بعد.</p>
+   <label for="prompt">صف التعديل الذي تريده</label>
+   <textarea id="prompt" maxlength="1200" placeholder="مثال: حسّن الإضاءة، واجعل الخلفية سينمائية، مع الحفاظ على ملامح الشخص الطبيعية."></textarea>
+   <div class="actions">
+    <button class="btn primary" id="aiRequest">تحضير طلب التعديل</button>
+   </div>
+   <p class="note">تنبيه: هذه النسخة لا تنشئ صورة AI بعد. التوليد الفعلي يحتاج خدمة خارجية وخادمًا آمنًا لحماية مفتاح API ورفع الصورة ومعالجة النتيجة.</p>
+   <p id="aiStatus" class="status" aria-live="polite"></p>
   </div>
+ </div>
 </section>
 
 <section id="contact">
-  <div class="wrap">
-    <div class="contact-box">
-      <div class="eyebrow">05 / Let's Create</div>
-      <h2 data-ar="عندك فكرة؟ خلّينا ننفذها." data-fa="ایده‌ای داری؟ با هم اجراش کنیم." data-en="Have an Idea? Let's Create It.">عندك فكرة؟ خلّينا ننفذها.</h2>
-      <p data-ar="للتصوير، الفيديو، التصميم، والهدايا الشخصية — تواصل معنا." data-fa="برای عکاسی، ویدیو، طراحی و هدایای شخصی با ما تماس بگیر." data-en="Contact us for photography, video, design, and personalized gifts.">للتصوير، الفيديو، التصميم، والهدايا الشخصية — تواصل معنا.</p>
-      <div class="actions" style="justify-content:center">
-        <a class="btn redbtn" href="https://wa.me/989335960566" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a class="btn outline" href="https://www.instagram.com/n_svvn7/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </div>
-      <div class="socials">
-        <a href="https://www.instagram.com/n_svvn7/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://youtube.com/@n_svvn7" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://t.me/Nabiil7" target="_blank" rel="noopener noreferrer">Telegram</a>
-      </div>
-      <p class="small-note">Instagram: @n_svvn7 · Telegram: @Nabiil7</p>
-    </div>
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">LET'S CREATE TOGETHER</div>
+   <h2>خلّينا نحول فكرتك إلى واقع</h2>
+   <p>للتصوير والتصميم والإعلانات والتعاون، تواصل معنا.</p>
   </div>
+  <div class="socials">
+   <a href="https://www.instagram.com/n_svvn7" target="_blank" rel="noopener">Instagram</a>
+   <a href="https://wa.me/989335960566" target="_blank" rel="noopener">WhatsApp</a>
+   <a href="https://youtube.com/@n_svvn7" target="_blank" rel="noopener">YouTube</a>
+   <a href="https://t.me/Nabiil7" target="_blank" rel="noopener">Telegram</a>
+  </div>
+ </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <a class="logo" href="#home">SaVaN<span>.</span>Stodio7</a>
-    <p>© 2026 SaVaN.Stodio7 — Photography · Design · Creative Studio</p>
-  </div>
-</footer>
+<footer>© <span id="year"></span> SeVeN Studio7 · الفن يبدأ من فكرة</footer>
 
 <script>
-function setLang(lang) {
-  const supported = ["ar", "fa", "en"];
-  if (!supported.includes(lang)) return;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = (lang === "en") ? "ltr" : "rtl";
-  document.querySelectorAll("[data-" + lang + "]").forEach(function(el) {
-    el.textContent = el.getAttribute("data-" + lang);
-  });
-  const prompt = document.getElementById("prompt");
-  const placeholders = {
-    ar: "مثال: عطر فاخر على طاولة سوداء، إضاءة سينمائية...",
-    fa: "مثال: عطر لوکس روی میز سیاه با نورپردازی سینمایی...",
-    en: "Example: luxury perfume on a black table, cinematic lighting..."
-  };
-  prompt.placeholder = placeholders[lang];
+const $=id=>document.getElementById(id);
+$("year").textContent=new Date().getFullYear();
+
+let originalImage=null;
+let objectURL=null;
+const sliders=["brightness","contrast","saturation","sepia"];
+
+function filters(){
+ return `brightness(${$("brightness").value}%) contrast(${$("contrast").value}%) saturate(${$("saturation").value}%) sepia(${$("sepia").value}%)`;
 }
-function improvePrompt() {
-  const box = document.getElementById("prompt");
-  const lang = document.documentElement.lang;
-  const idea = box.value.trim();
-  if (!idea) {
-    document.getElementById("aiMessage").textContent =
-      lang === "en" ? "Write an image idea first." :
-      lang === "fa" ? "ابتدا ایده تصویر را بنویس." :
-      "اكتب فكرة الصورة أولاً.";
-    box.focus();
-    return;
-  }
-  const extra = ", luxury editorial photography, cinematic lighting, refined composition, realistic details, premium color grading, high-quality visual";
-  if (!idea.toLowerCase().includes("cinematic lighting")) box.value = idea + extra;
-  document.getElementById("aiMessage").textContent =
-    lang === "en" ? "Prompt improved. You can copy it or open the image tool." :
-    lang === "fa" ? "پرامپت بهتر شد. می‌توانی آن را کپی کنی یا ابزار تصویر را باز کنی." :
-    "تم تحسين البرومبت. تقدر تنسخه أو تفتح أداة الصور.";
+function refresh(){
+ $("preview").style.filter=filters();
+ sliders.forEach(id=>$(id+"Out").textContent=$(id).value+"%");
 }
-function openImageAI() {
-  const prompt = document.getElementById("prompt").value.trim();
-  if (prompt) {
-    window.open("https://www.bing.com/images/create", "_blank", "noopener,noreferrer");
-  } else {
-    document.getElementById("prompt").focus();
-    document.getElementById("aiMessage").textContent =
-      "اكتب فكرتك أولاً، ثم افتح مولّد الصور الخارجي.";
-  }
+function resetEditor(){
+ $("brightness").value=100;
+ $("contrast").value=100;
+ $("saturation").value=100;
+ $("sepia").value=0;
+ refresh();
 }
-async function copyPrompt() {
-  const box = document.getElementById("prompt");
-  const lang = document.documentElement.lang;
-  if (!box.value.trim()) {
-    document.getElementById("aiMessage").textContent =
-      lang === "en" ? "There is no text to copy." :
-      lang === "fa" ? "متنی برای کپی وجود ندارد." :
-      "ماكو نص حتى تنسخه.";
-    return;
+$("upload").addEventListener("change",e=>{
+ const file=e.target.files&&e.target.files[0];
+ if(!file)return;
+ if(!file.type.startsWith("image/")){
+  $("editStatus").textContent="اختر ملف صورة صالحًا.";
+  return;
+ }
+ if(file.size>15*1024*1024){
+  $("editStatus").textContent="حجم الصورة أكبر من 15 ميغابايت. اختر صورة أصغر.";
+  e.target.value="";
+  return;
+ }
+ if(objectURL)URL.revokeObjectURL(objectURL);
+ objectURL=URL.createObjectURL(file);
+ const img=new Image();
+ img.onload=()=>{
+  originalImage=img;
+  $("preview").src=objectURL;
+  $("preview").hidden=false;
+  sliders.forEach(id=>$(id).disabled=false);
+  $("reset").disabled=false;
+  $("download").disabled=false;
+  resetEditor();
+  $("editStatus").textContent="تم تحميل الصورة. عدّلها ثم نزّل النتيجة.";
+ };
+ img.onerror=()=>{
+  $("editStatus").textContent="تعذر فتح الصورة. جرّب ملفًا آخر.";
+ };
+ img.src=objectURL;
+});
+sliders.forEach(id=>$(id).addEventListener("input",refresh));
+$("reset").addEventListener("click",resetEditor);
+
+$("download").addEventListener("click",()=>{
+ if(!originalImage)return;
+ const maxSide=2400;
+ const scale=Math.min(1,maxSide/Math.max(originalImage.naturalWidth,originalImage.naturalHeight));
+ const canvas=document.createElement("canvas");
+ canvas.width=Math.round(originalImage.naturalWidth*scale);
+ canvas.height=Math.round(originalImage.naturalHeight*scale);
+ const ctx=canvas.getContext("2d");
+ ctx.filter=filters();
+ ctx.drawImage(originalImage,0,0,canvas.width,canvas.height);
+ canvas.toBlob(blob=>{
+  if(!blob){
+   $("editStatus").textContent="تعذر إنشاء الصورة. جرّب صورة أصغر.";
+   return;
   }
-  try {
-    await navigator.clipboard.writeText(box.value);
-    document.getElementById("aiMessage").textContent =
-      lang === "en" ? "Copied!" : lang === "fa" ? "کپی شد!" : "تم النسخ!";
-  } catch (e) {
-    box.select();
-    document.getElementById("aiMessage").textContent =
-      lang === "en" ? "Select the text and copy it manually." :
-      lang === "fa" ? "متن را انتخاب کن و دستی کپی کن." :
-      "حدد النص وانسخه يدوياً.";
-  }
-}
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="seven-studio7-edited.jpg";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+  $("editStatus").textContent="جهزت الصورة المعدلة للتنزيل.";
+ },"image/jpeg",0.94);
+});
+
+let aiImageFile=null;
+$("aiUpload").addEventListener("change",e=>{
+ aiImageFile=e.target.files&&e.target.files[0]||null;
+ $("aiFileName").textContent=aiImageFile?
+  "الصورة المختارة: "+aiImageFile.name:"لم تختر صورة بعد.";
+});
+$("aiRequest").addEventListener("click",()=>{
+ if(!aiImageFile){
+  $("aiStatus").textContent="ارفع صورة أولًا.";
+  return;
+ }
+ if(!$("prompt").value.trim()){
+  $("aiStatus").textContent="اكتب وصف التعديل المطلوب أولًا.";
+  return;
+ }
+ $("aiStatus").textContent="تم تجهيز وصفك، لكن إنشاء الصورة لم يُفعّل بعد. نحتاج ربط خدمة AI آمنة حتى تُعالج الصورة وتعيد النتيجة.";
+});
+
+const dictionary={
+ ar:{dir:"rtl",title:"رؤيتك تتحول إلى فن استثنائي",home:"الرئيسية",portfolio:"أعمالنا",editor:"محرر الصور",ai:"مختبر AI",contact:"التواصل"},
+ fa:{dir:"rtl",title:"دیدگاه شما به هنری استثنایی تبدیل می‌شود",home:"خانه",portfolio:"نمونه‌کارها",editor:"ویرایشگر عکس",ai:"آزمایشگاه هوش مصنوعی",contact:"تماس"},
+ en:{dir:"ltr",title:"Turn Your Vision Into Exceptional Art",home:"Home",portfolio:"Portfolio",editor:"Photo Editor",ai:"AI Lab",contact:"Contact"}
+};
+$("lang").addEventListener("change",e=>{
+ const lang=e.target.value,t=dictionary[lang];
+ document.documentElement.lang=lang;
+ document.documentElement.dir=t.dir;
+ document.querySelectorAll(".links a").forEach(a=>{
+  const k=a.getAttribute("href").slice(1);
+  a.textContent=t[k]||a.textContent;
+ });
+});
 </script>
 </body>
 </html>
