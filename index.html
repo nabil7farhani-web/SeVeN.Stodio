@@ -3,46 +3,147 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SaVaN.Stodio7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>SaVaN.Stodio7 | Creative Studio</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif;text-align:center}
-header{padding:35px 15px;background:linear-gradient(135deg,#190000,#111,#350000)}
-h1{color:#ff3030;font-size:36px;margin:10px}
-p{line-height:1.9;color:#ddd}
-section{padding:28px 18px}
-h2{color:#ff3939}
-.card{border:1px solid #5b2525;border-radius:15px;padding:18px;margin:14px auto;max-width:420px;background:#151515}
-a{display:inline-block;color:white;background:#b90000;text-decoration:none;padding:12px 20px;border-radius:8px;margin:7px}
-footer{padding:20px;color:#aaa;border-top:1px solid #333}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080808;color:#fff;font-family:Arial,sans-serif}
+:root{--red:#ff1838;--muted:#ccc}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 5%;background:#080808ed;border-bottom:1px solid #4c151d}
+.logo{font-size:24px;font-weight:bold;white-space:nowrap}
+.logo span,h2 span{color:var(--red)}
+.links{display:flex;gap:15px;align-items:center;flex-wrap:wrap}
+.links a:hover{color:var(--red)}
+.lang button{background:#161616;color:white;border:1px solid #555;padding:7px;border-radius:6px}
+.lang button:focus{border-color:var(--red)}
+.hero{min-height:650px;padding:85px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#050505f5 0%,#050505c9 48%,#05050525 100%),url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=2000&q=90') center/cover}
+.hero-content{max-width:700px}
+.eyebrow{letter-spacing:4px;color:var(--red);font-weight:bold}
+h1{font-size:clamp(38px,7vw,78px);line-height:1.05;margin:15px 0}
+h1 span{color:var(--red)}
+.hero p{font-size:18px;line-height:1.8;color:#eee}
+.btn{display:inline-block;padding:13px 20px;margin:8px 8px 0 0;background:var(--red);border:1px solid var(--red);border-radius:5px;font-weight:bold}
+.btn.outline{background:transparent}
+section{padding:65px 6%}
+.heading{text-align:center;font-size:32px;margin:0 0 15px}
+.sub{text-align:center;color:var(--muted);line-height:1.8;max-width:700px;margin:0 auto 30px}
+.about{background:#101010;text-align:center}
+.about p{max-width:800px;margin:auto;color:#ddd;line-height:2}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{overflow:hidden;background:#121212;border:1px solid #383838;border-radius:12px;text-align:center;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:var(--red)}
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card h3{margin:18px 8px 8px}
+.card p{color:#ccc;line-height:1.7;padding:0 12px 12px;font-size:14px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:8px;border:1px solid #333}
+.contact{background:linear-gradient(135deg,#17080b,#080808);text-align:center}
+footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #333}
+@media(max-width:750px){
+nav{align-items:flex-start;flex-direction:column}
+.links{gap:12px;font-size:14px}
+.hero{min-height:600px;padding:65px 6%;background-position:58% center}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card img{height:140px}
+.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gallery img{height:150px}
+section{padding:48px 5%}
+}
+@media(max-width:380px){.grid{grid-template-columns:1fr}.logo{font-size:21px}}
 </style>
 </head>
 <body>
-<header>
-<p>WELCOME TO</p>
-<h1>SaVaN.Stodio7</h1>
-<p>Photography • Cinematic Video • Creative Design</p>
-<a href="https://www.instagram.com/n_svvn7">Instagram @n_svvn7</a>
+<nav>
+<a class="logo" href="#home">SaVaN<span>.</span>Stodio7</a>
+<div class="links">
+<a href="#home" data-ar="الرئيسية" data-fa="خانه" data-en="Home">الرئيسية</a>
+<a href="#about" data-ar="من نحن" data-fa="درباره ما" data-en="About">من نحن</a>
+<a href="#services" data-ar="خدماتنا" data-fa="خدمات" data-en="Services">خدماتنا</a>
+<a href="#gallery" data-ar="المعرض" data-fa="گالری" data-en="Gallery">المعرض</a>
+<a href="#contact" data-ar="اتصل بنا" data-fa="تماس" data-en="Contact">اتصل بنا</a>
+</div>
+<div class="lang">
+<button onclick="setLang('fa')">FA</button>
+<button onclick="setLang('ar')">AR</button>
+<button onclick="setLang('en')">EN</button>
+</div>
+</nav>
+
+<header class="hero" id="home">
+<div class="hero-content">
+<div class="eyebrow">CREATIVE • CINEMATIC • ART</div>
+<h1>WELCOME TO<br><span>SaVaN.Stodio7</span></h1>
+<p data-ar="التصوير الفوتوغرافي | الفيديو السينمائي | التصميم الإبداعي" data-fa="عکاسی | ویدئوی سینمایی | طراحی خلاقانه" data-en="Photography | Cinematic Video | Creative Design">التصوير الفوتوغرافي | الفيديو السينمائي | التصميم الإبداعي</p>
+<p data-ar="نحوّل لحظاتك إلى صور مذهلة وقصص سينمائية لا تُنسى." data-fa="لحظه‌های شما را به تصاویر شگفت‌انگیز و داستان‌های سینمایی تبدیل می‌کنیم." data-en="We turn your moments into stunning photos and cinematic stories.">نحوّل لحظاتك إلى صور مذهلة وقصص سينمائية لا تُنسى.</p>
+<a class="btn" href="https://wa.me/989335960566" data-ar="اطلب خدمتك الآن" data-fa="همین حالا سفارش بده" data-en="Book Your Service">اطلب خدمتك الآن</a>
+<a class="btn outline" href="https://www.instagram.com/n_svvn7">Instagram ↗</a>
+</div>
 </header>
-<section>
-<h2>من نحن | من نحن؟</h2>
-<p>نحوّل لحظاتك إلى صور وقصص سينمائية مميزة.</p>
-<p>نقدم خدمات التصوير الفوتوغرافي، الفيديو الإعلاني، التصميم الإبداعي والصور بالذكاء الاصطناعي.</p>
+
+<section class="about" id="about">
+<h2 class="heading"><span data-ar="من نحن" data-fa="درباره ما" data-en="About Us">من نحن</span></h2>
+<p data-ar="نؤمن أن كل صورة تحكي قصة. نقدم خدمات التصوير الفوتوغرافي والفيديو الإعلاني والمونتاج والتصميم الإبداعي والصور بالذكاء الاصطناعي، باهتمام بالتفاصيل ولمسة سينمائية مميزة." data-fa="ما باور داریم هر عکس داستانی دارد. خدمات عکاسی، ویدئوی تبلیغاتی، تدوین، طراحی خلاقانه و تصاویر هوش مصنوعی را با توجه به جزئیات ارائه می‌دهیم." data-en="Every image tells a story. We create photography, promotional videos, cinematic edits, creative designs and AI-assisted visuals with attention to detail.">نؤمن أن كل صورة تحكي قصة. نقدم خدمات التصوير الفوتوغرافي والفيديو الإعلاني والمونتاج والتصميم الإبداعي والصور بالذكاء الاصطناعي، باهتمام بالتفاصيل ولمسة سينمائية مميزة.</p>
 </section>
-<section>
-<h2>Our Services | خدماتنا</h2>
-<div class="card"><h3>📸 Photography</h3><p>تصوير احترافي ولحظات لا تُنسى.</p></div>
-<div class="card"><h3>🎬 Cinematic Video</h3><p>فيديوهات إعلانية ومونتاج سينمائي.</p></div>
-<div class="card"><h3>✨ Creative Design</h3><p>تصاميم إبداعية وصور بالذكاء الاصطناعي.</p></div>
+
+<section id="services">
+<h2 class="heading"><span data-ar="خدماتنا" data-fa="خدمات ما" data-en="Our Services">خدماتنا</span></h2>
+<p class="sub" data-ar="أفكار إبداعية، تنفيذ احترافي، ونتائج تترك انطباعاً." data-fa="ایده‌های خلاقانه، اجرای حرفه‌ای و نتیجه‌ای ماندگار." data-en="Creative ideas, professional execution and memorable results.">أفكار إبداعية، تنفيذ احترافي، ونتائج تترك انطباعاً.</p>
+<div class="grid">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=700&q=85" alt="Photography">
+<h3>📸 Photography</h3>
+<p data-ar="تصوير فوتوغرافي وصور شخصية ومنتجات." data-fa="عکاسی پرتره، شخصی و محصول." data-en="Portrait, personal and product photography.">تصوير فوتوغرافي وصور شخصية ومنتجات.</p>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=85" alt="Cinematic video">
+<h3>🎬 Cinematic Video</h3>
+<p data-ar="فيديوهات إعلانية ومونتاج سينمائي." data-fa="ویدئوهای تبلیغاتی و تدوین سینمایی." data-en="Promotional films and cinematic editing.">فيديوهات إعلانية ومونتاج سينمائي.</p>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=85" alt="Creative work">
+<h3>✨ Creative Design</h3>
+<p data-ar="تصاميم إعلانية ومحتوى للسوشيال ميديا." data-fa="طراحی تبلیغاتی و محتوای شبکه‌های اجتماعی." data-en="Advertising designs and social media content.">تصاميم إعلانية ومحتوى للسوشيال ميديا.</p>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=700&q=85" alt="Artificial intelligence">
+<h3>🤖 AI Visuals</h3>
+<p data-ar="أفكار وصور إبداعية بمساعدة الذكاء الاصطناعي." data-fa="ایده‌ها و تصاویر خلاقانه با کمک هوش مصنوعی." data-en="Creative visuals made with AI assistance.">أفكار وصور إبداعية بمساعدة الذكاء الاصطناعي.</p>
+</article>
+</div>
 </section>
-<section>
-<h2>تواصل معنا | Contact Us</h2>
-<p>للطلب والاستفسار تواصل معنا مباشرة.</p>
-<a href="https://wa.me/989335960566">WhatsApp</a>
-<a href="https://www.instagram.com/n_svvn7">Instagram</a>
+
+<section id="gallery">
+<h2 class="heading"><span data-ar="معرض الإلهام" data-fa="گالری الهام" data-en="Visual Gallery">معرض الإلهام</span></h2>
+<p class="sub" data-ar="نماذج بصرية للإلهام — استبدلها بأعمالك الأصلية عندما تكون جاهزة." data-fa="نمونه‌هایی برای الهام؛ بعداً با آثار اصلی خود جایگزین کنید." data-en="Visual inspiration — replace these examples with your own work when ready.">نماذج بصرية للإلهام — استبدلها بأعمالك الأصلية عندما تكون جاهزة.</p>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=85" alt="Camera">
+<img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=700&q=85" alt="Cinema">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Landscape">
+<img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=700&q=85" alt="Creative photography">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=85" alt="Portrait">
+<img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=85" alt="Night sky">
+</div>
 </section>
-<footer>© 2026 SaVaN.Stodio7 — All Rights Reserved</footer>
+
+<section class="contact" id="contact">
+<h2 class="heading"><span data-ar="خلّينا نصنع شيئاً مميزاً" data-fa="بیایید اثری خاص بسازیم" data-en="Let's Create Something Special">خلّينا نصنع شيئاً مميزاً</span></h2>
+<p class="sub" data-ar="للطلب والاستفسار، تواصل معنا مباشرة." data-fa="برای سفارش و پرسش با ما تماس بگیرید." data-en="For bookings and inquiries, contact us directly.">للطلب والاستفسار، تواصل معنا مباشرة.</p>
+<a class="btn" href="https://wa.me/989335960566">WhatsApp</a>
+<a class="btn outline" href="https://www.instagram.com/n_svvn7">@n_svvn7</a>
+</section>
+
+<footer>SaVaN.Stodio7 © 2026 • Capture. Create. Inspire.</footer>
+<script>
+function setLang(lang){
+document.documentElement.lang=lang;
+document.documentElement.dir=lang==="fa"||lang==="ar"?"rtl":"ltr";
+document.querySelectorAll("[data-"+lang+"]").forEach(function(el){
+el.textContent=el.getAttribute("data-"+lang);
+});
+}
+</script>
 </body>
 </html>
-
