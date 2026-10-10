@@ -1,148 +1,360 @@
-
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080808">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="description" content="SaVaN.Stodio7 — Photography, Cinematic Video, Personalized Photo Gifts and AI Creativity.">
 <title>SaVaN.Stodio7 | Creative Studio</title>
+
 <style>
+:root {
+  --bg:#090909;
+  --panel:#141414;
+  --red:#c62835;
+  --gold:#c6a56a;
+  --white:#f7f3ec;
+  --muted:#aaa39b;
+  --line:rgba(198,165,106,.27);
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#080808;color:#fff;font-family:Arial,sans-serif}
-:root{--red:#ff1838;--muted:#ccc}
-a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 5%;background:#080808ed;border-bottom:1px solid #4c151d}
-.logo{font-size:24px;font-weight:bold;white-space:nowrap}
-.logo span,h2 span{color:var(--red)}
-.links{display:flex;gap:15px;align-items:center;flex-wrap:wrap}
-.links a:hover{color:var(--red)}
-.lang button{background:#161616;color:white;border:1px solid #555;padding:7px;border-radius:6px}
-.lang button:focus{border-color:var(--red)}
-.hero{min-height:650px;padding:85px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#050505f5 0%,#050505c9 48%,#05050525 100%),url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=2000&q=90') center/cover}
-.hero-content{max-width:700px}
-.eyebrow{letter-spacing:4px;color:var(--red);font-weight:bold}
-h1{font-size:clamp(38px,7vw,78px);line-height:1.05;margin:15px 0}
-h1 span{color:var(--red)}
-.hero p{font-size:18px;line-height:1.8;color:#eee}
-.btn{display:inline-block;padding:13px 20px;margin:8px 8px 0 0;background:var(--red);border:1px solid var(--red);border-radius:5px;font-weight:bold}
-.btn.outline{background:transparent}
-section{padding:65px 6%}
-.heading{text-align:center;font-size:32px;margin:0 0 15px}
-.sub{text-align:center;color:var(--muted);line-height:1.8;max-width:700px;margin:0 auto 30px}
-.about{background:#101010;text-align:center}
-.about p{max-width:800px;margin:auto;color:#ddd;line-height:2}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.card{overflow:hidden;background:#121212;border:1px solid #383838;border-radius:12px;text-align:center;transition:.25s}
-.card:hover{transform:translateY(-5px);border-color:var(--red)}
-.card img{width:100%;height:180px;object-fit:cover;display:block}
-.card h3{margin:18px 8px 8px}
-.card p{color:#ccc;line-height:1.7;padding:0 12px 12px;font-size:14px}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.gallery img{width:100%;height:220px;object-fit:cover;border-radius:8px;border:1px solid #333}
-.contact{background:linear-gradient(135deg,#17080b,#080808);text-align:center}
-footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #333}
-@media(max-width:750px){
-nav{align-items:flex-start;flex-direction:column}
-.links{gap:12px;font-size:14px}
-.hero{min-height:600px;padding:65px 6%;background-position:58% center}
-.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.card img{height:140px}
-.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
-.gallery img{height:150px}
-section{padding:48px 5%}
+body{
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.8;
 }
-@media(max-width:380px){.grid{grid-template-columns:1fr}.logo{font-size:21px}}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button,a{ -webkit-tap-highlight-color:transparent }
+img{display:block;width:100%;object-fit:cover}
+.wrap{width:min(1160px,92%);margin:auto}
+.gold{color:var(--gold)}
+.red{color:#ff5965}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(9,9,9,.94);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 0;
+}
+.logo{font-size:24px;letter-spacing:1px;font-weight:bold}
+.logo span{color:var(--red)}
+.navlinks{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
+.navlinks a:hover{color:var(--gold)}
+.langs{display:flex;gap:5px}
+.langs button{
+  border:1px solid var(--line);background:#151515;color:white;
+  padding:6px 9px;border-radius:5px;cursor:pointer;font-size:12px;
+}
+.hero{
+  min-height:570px;display:flex;align-items:center;
+  background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.25)),
+  url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85") center/cover;
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{padding:80px 0;max-width:720px}
+.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(40px,7vw,76px);line-height:1.12;margin:18px 0}
+h2{font-size:clamp(27px,4vw,42px);line-height:1.25;margin:0 0 14px}
+h3{margin:14px 0 8px}
+p{color:#c5c0b9}
+.hero p{max-width:600px;font-size:17px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;
+  padding:12px 20px;border:1px solid var(--gold);border-radius:3px;
+  background:var(--gold);color:#100f0d;font-weight:bold;cursor:pointer;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.outline{background:transparent;color:var(--white)}
+.btn.redbtn{background:var(--red);border-color:var(--red);color:white}
+section{padding:76px 0;scroll-margin-top:85px}
+.section-head{max-width:700px;margin-bottom:32px}
+.section-head p{margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{
+  background:var(--panel);border:1px solid var(--line);
+  overflow:hidden;border-radius:5px;transition:.25s;
+}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.card img{height:245px}
+.card-body{padding:20px}
+.card-body p{font-size:14px;margin-bottom:0}
+.tag{color:var(--gold);font-size:12px;letter-spacing:1px}
+.products img{height:260px}
+.products .card-body{min-height:145px}
+.dark-section{background:#101010;border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.split img{height:390px;border-radius:4px;border:1px solid var(--line)}
+.feature-list{padding:0;list-style:none}
+.feature-list li{padding:8px 0;border-bottom:1px solid #292929;color:#ddd}
+.feature-list li::before{content:"✦ ";color:var(--gold)}
+.toolbox{
+  padding:25px;background:#101010;border:1px solid var(--line);border-radius:5px;
+}
+textarea,input{
+  width:100%;padding:13px;background:#080808;color:white;
+  border:1px solid #49433b;border-radius:4px;outline:none;
+}
+textarea:focus,input:focus{border-color:var(--gold)}
+textarea{min-height:135px;resize:vertical}
+.small-note{font-size:12px;color:var(--muted)}
+.tool-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.music-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.music-links a{border:1px solid var(--line);padding:12px 16px;border-radius:3px}
+.music-links a:hover{border-color:var(--gold);color:var(--gold)}
+.contact-box{
+  text-align:center;padding:38px 22px;background:linear-gradient(135deg,#181512,#0b0b0b);
+  border:1px solid var(--line);
+}
+.socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.socials a{padding:10px 15px;border:1px solid var(--line);border-radius:3px}
+.socials a:hover{background:var(--red);border-color:var(--red)}
+footer{padding:25px 0;border-top:1px solid var(--line);text-align:center}
+footer p{font-size:13px}
+@media(max-width:800px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split{grid-template-columns:1fr}
+  .split img{height:300px}
+  .nav{justify-content:center}
+  .navlinks{justify-content:center}
+  .hero{min-height:520px}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .card img,.products img{height:250px}
+  section{padding:55px 0}
+  .hero-inner{padding:60px 0}
+  .navlinks{gap:10px;font-size:12px}
+}
 </style>
 </head>
-<body>
-<nav>
-<a class="logo" href="#home">SaVaN<span>.</span>Stodio7</a>
-<div class="links">
-<a href="#home" data-ar="الرئيسية" data-fa="خانه" data-en="Home">الرئيسية</a>
-<a href="#about" data-ar="من نحن" data-fa="درباره ما" data-en="About">من نحن</a>
-<a href="#services" data-ar="خدماتنا" data-fa="خدمات" data-en="Services">خدماتنا</a>
-<a href="#gallery" data-ar="المعرض" data-fa="گالری" data-en="Gallery">المعرض</a>
-<a href="#contact" data-ar="اتصل بنا" data-fa="تماس" data-en="Contact">اتصل بنا</a>
-</div>
-<div class="lang">
-<button onclick="setLang('fa')">FA</button>
-<button onclick="setLang('ar')">AR</button>
-<button onclick="setLang('en')">EN</button>
-</div>
-</nav>
 
-<header class="hero" id="home">
-<div class="hero-content">
-<div class="eyebrow">CREATIVE • CINEMATIC • ART</div>
-<h1>WELCOME TO<br><span>SaVaN.Stodio7</span></h1>
-<p data-ar="التصوير الفوتوغرافي | الفيديو السينمائي | التصميم الإبداعي" data-fa="عکاسی | ویدئوی سینمایی | طراحی خلاقانه" data-en="Photography | Cinematic Video | Creative Design">التصوير الفوتوغرافي | الفيديو السينمائي | التصميم الإبداعي</p>
-<p data-ar="نحوّل لحظاتك إلى صور مذهلة وقصص سينمائية لا تُنسى." data-fa="لحظه‌های شما را به تصاویر شگفت‌انگیز و داستان‌های سینمایی تبدیل می‌کنیم." data-en="We turn your moments into stunning photos and cinematic stories.">نحوّل لحظاتك إلى صور مذهلة وقصص سينمائية لا تُنسى.</p>
-<a class="btn" href="https://wa.me/989335960566" data-ar="اطلب خدمتك الآن" data-fa="همین حالا سفارش بده" data-en="Book Your Service">اطلب خدمتك الآن</a>
-<a class="btn outline" href="https://www.instagram.com/n_svvn7">Instagram ↗</a>
-</div>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home">SaVaN<span>.</span>Stodio7</a>
+    <nav class="navlinks">
+      <a href="#studio" data-ar="الاستوديو" data-fa="استودیو" data-en="Studio">الاستوديو</a>
+      <a href="#gifts" data-ar="هدايا الصور" data-fa="هدایای عکس" data-en="Photo Gifts">هدايا الصور</a>
+      <a href="#ai" data-ar="مختبر AI" data-fa="آزمایشگاه هوش مصنوعی" data-en="AI Lab">مختبر AI</a>
+      <a href="#music" data-ar="الموسيقى" data-fa="موسیقی" data-en="Music">الموسيقى</a>
+      <a href="#contact" data-ar="اتصل بنا" data-fa="تماس" data-en="Contact">اتصل بنا</a>
+    </nav>
+    <div class="langs">
+      <button onclick="setLang('ar')">عربي</button>
+      <button onclick="setLang('fa')">فارسی</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+  </div>
 </header>
 
-<section class="about" id="about">
-<h2 class="heading"><span data-ar="من نحن" data-fa="درباره ما" data-en="About Us">من نحن</span></h2>
-<p data-ar="نؤمن أن كل صورة تحكي قصة. نقدم خدمات التصوير الفوتوغرافي والفيديو الإعلاني والمونتاج والتصميم الإبداعي والصور بالذكاء الاصطناعي، باهتمام بالتفاصيل ولمسة سينمائية مميزة." data-fa="ما باور داریم هر عکس داستانی دارد. خدمات عکاسی، ویدئوی تبلیغاتی، تدوین، طراحی خلاقانه و تصاویر هوش مصنوعی را با توجه به جزئیات ارائه می‌دهیم." data-en="Every image tells a story. We create photography, promotional videos, cinematic edits, creative designs and AI-assisted visuals with attention to detail.">نؤمن أن كل صورة تحكي قصة. نقدم خدمات التصوير الفوتوغرافي والفيديو الإعلاني والمونتاج والتصميم الإبداعي والصور بالذكاء الاصطناعي، باهتمام بالتفاصيل ولمسة سينمائية مميزة.</p>
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Photography · Film · Creative Technology</div>
+    <h1>
+      <span data-ar="الفنّ يبدأ" data-fa="هنر آغاز می‌شود" data-en="Where Art">الفنّ يبدأ</span><br>
+      <span class="gold" data-ar="من رؤيتك." data-fa="از نگاه تو." data-en="Begins With You.">من رؤيتك.</span>
+    </h1>
+    <p data-ar="نحوّل اللحظات إلى صور، والأفكار إلى تصاميم، والذكريات إلى هدايا تبقى معك." data-fa="لحظه‌ها را به تصویر، ایده‌ها را به طراحی و خاطره‌ها را به هدایایی ماندگار تبدیل می‌کنیم." data-en="We turn moments into photographs, ideas into designs, and memories into lasting gifts.">نحوّل اللحظات إلى صور، والأفكار إلى تصاميم، والذكريات إلى هدايا تبقى معك.</p>
+    <div class="actions">
+      <a class="btn redbtn" href="#gifts" data-ar="اكتشف الهدايا" data-fa="دیدن هدایا" data-en="Explore Gifts">اكتشف الهدايا</a>
+      <a class="btn outline" href="#contact" data-ar="اطلب شغلك" data-fa="سفارش بده" data-en="Request a Project">اطلب شغلك</a>
+    </div>
+  </div>
 </section>
 
-<section id="services">
-<h2 class="heading"><span data-ar="خدماتنا" data-fa="خدمات ما" data-en="Our Services">خدماتنا</span></h2>
-<p class="sub" data-ar="أفكار إبداعية، تنفيذ احترافي، ونتائج تترك انطباعاً." data-fa="ایده‌های خلاقانه، اجرای حرفه‌ای و نتیجه‌ای ماندگار." data-en="Creative ideas, professional execution and memorable results.">أفكار إبداعية، تنفيذ احترافي، ونتائج تترك انطباعاً.</p>
-<div class="grid">
-<article class="card">
-<img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=700&q=85" alt="Photography">
-<h3>📸 Photography</h3>
-<p data-ar="تصوير فوتوغرافي وصور شخصية ومنتجات." data-fa="عکاسی پرتره، شخصی و محصول." data-en="Portrait, personal and product photography.">تصوير فوتوغرافي وصور شخصية ومنتجات.</p>
-</article>
-<article class="card">
-<img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=85" alt="Cinematic video">
-<h3>🎬 Cinematic Video</h3>
-<p data-ar="فيديوهات إعلانية ومونتاج سينمائي." data-fa="ویدئوهای تبلیغاتی و تدوین سینمایی." data-en="Promotional films and cinematic editing.">فيديوهات إعلانية ومونتاج سينمائي.</p>
-</article>
-<article class="card">
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=85" alt="Creative work">
-<h3>✨ Creative Design</h3>
-<p data-ar="تصاميم إعلانية ومحتوى للسوشيال ميديا." data-fa="طراحی تبلیغاتی و محتوای شبکه‌های اجتماعی." data-en="Advertising designs and social media content.">تصاميم إعلانية ومحتوى للسوشيال ميديا.</p>
-</article>
-<article class="card">
-<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=700&q=85" alt="Artificial intelligence">
-<h3>🤖 AI Visuals</h3>
-<p data-ar="أفكار وصور إبداعية بمساعدة الذكاء الاصطناعي." data-fa="ایده‌ها و تصاویر خلاقانه با کمک هوش مصنوعی." data-en="Creative visuals made with AI assistance.">أفكار وصور إبداعية بمساعدة الذكاء الاصطناعي.</p>
-</article>
-</div>
+<section id="studio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">01 / The Studio</div>
+      <h2 data-ar="تصوير يحكي قصتك" data-fa="عکاسی، روایت داستان تو" data-en="Photography That Tells Your Story">تصوير يحكي قصتك</h2>
+      <p data-ar="من الصور الشخصية إلى المحتوى التجاري، نصنع مظهراً أنيقاً يناسب هويتك." data-fa="از پرتره تا محتوای تجاری، تصویری حرفه‌ای متناسب با هویت شما می‌سازیم." data-en="From portraits to commercial content, we create a polished look for your brand.">من الصور الشخصية إلى المحتوى التجاري، نصنع مظهراً أنيقاً يناسب هويتك.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="Camera and photography">
+        <div class="card-body"><span class="tag">01 — PHOTO</span><h3 data-ar="التصوير الاحترافي" data-fa="عکاسی حرفه‌ای" data-en="Professional Photography">التصوير الاحترافي</h3><p data-ar="صور شخصية، منتجات، مناسبات، وصور إعلانية." data-fa="پرتره، محصول، مناسبت و عکس تبلیغاتی." data-en="Portraits, products, events, and advertising photography.">صور شخصية، منتجات، مناسبات، وصور إعلانية.</p></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="Video production camera">
+        <div class="card-body"><span class="tag">02 — FILM</span><h3 data-ar="فيديو وإعلانات" data-fa="ویدیو و تبلیغات" data-en="Video & Advertising">فيديو وإعلانات</h3><p data-ar="ريلز، فيديوهات منتجات، ومحتوى بصري للسوشيال ميديا." data-fa="ریلز، ویدیو محصول و محتوای شبکه‌های اجتماعی." data-en="Reels, product films, and social media visuals.">ريلز، فيديوهات منتجات، ومحتوى بصري للسوشيال ميديا.</p></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=900&q=80" alt="Creative design workspace">
+        <div class="card-body"><span class="tag">03 — DESIGN</span><h3 data-ar="تصميم ومحتوى AI" data-fa="طراحی و محتوای هوش مصنوعی" data-en="Design & AI Content">تصميم ومحتوى AI</h3><p data-ar="أفكار بصرية، ملصقات، هويات إعلانية، وبرومبتات إبداعية." data-fa="ایده‌های بصری، پوستر، هویت تبلیغاتی و پرامپت." data-en="Visual concepts, posters, advertising identity, and creative prompts.">أفكار بصرية، ملصقات، هويات إعلانية، وبرومبتات إبداعية.</p></div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="gallery">
-<h2 class="heading"><span data-ar="معرض الإلهام" data-fa="گالری الهام" data-en="Visual Gallery">معرض الإلهام</span></h2>
-<p class="sub" data-ar="نماذج بصرية للإلهام — استبدلها بأعمالك الأصلية عندما تكون جاهزة." data-fa="نمونه‌هایی برای الهام؛ بعداً با آثار اصلی خود جایگزین کنید." data-en="Visual inspiration — replace these examples with your own work when ready.">نماذج بصرية للإلهام — استبدلها بأعمالك الأصلية عندما تكون جاهزة.</p>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=85" alt="Camera">
-<img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=700&q=85" alt="Cinema">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Landscape">
-<img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=700&q=85" alt="Creative photography">
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=85" alt="Portrait">
-<img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=85" alt="Night sky">
-</div>
+<section class="dark-section" id="gifts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">02 / Personalized Memories</div>
+      <h2 data-ar="ذكرياتك… بتصميم استثنائي" data-fa="خاطره‌هایت، با طراحی ویژه" data-en="Your Memories, Beautifully Made">ذكرياتك… بتصميم استثنائي</h2>
+      <p data-ar="أفكار هدايا شخصية قابلة للتخصيص حسب الصورة والاسم والمناسبة. اسألنا عن المقاسات والخامات المتوفرة." data-fa="ایده‌های هدیه شخصی با عکس، نام و مناسبت دلخواه. درباره اندازه و جنس موجود سؤال کنید." data-en="Personalized gifts using your photo, name, or occasion. Ask us about available sizes and materials.">أفكار هدايا شخصية قابلة للتخصيص حسب الصورة والاسم والمناسبة. اسألنا عن المقاسات والخامات المتوفرة.</p>
+    </div>
+    <div class="grid products">
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80" alt="Wall art and framed pictures">
+        <div class="card-body"><span class="tag">WALL COLLECTION</span><h3 data-ar="صور وإطارات معلّقة" data-fa="عکس و قاب دیواری" data-en="Hanging Photo Frames">صور وإطارات معلّقة</h3><p data-ar="صور جدارية وقطع ديكور شخصية للبيت أو المكتب." data-fa="عکس دیواری و دکور شخصی برای خانه یا دفتر." data-en="Personalized wall prints and decor for home or office.">صور جدارية وقطع ديكور شخصية للبيت أو المكتب.</p></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=80" alt="Desk and interior decor">
+        <div class="card-body"><span class="tag">DESK COLLECTION</span><h3 data-ar="صور مكتبية وديكور" data-fa="عکس رومیزی و دکور" data-en="Desktop Photo Gifts">صور مكتبية وديكور</h3><p data-ar="ذكريات على مكتبك بتنسيق كلاسيكي وأنيق." data-fa="خاطره‌ها روی میز با چیدمانی کلاسیک و زیبا." data-en="Classic, elegant memories for your desk.">ذكريات على مكتبك بتنسيق كلاسيكي وأنيق.</p></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80" alt="Jewelry gift">
+        <div class="card-body"><span class="tag">PERSONAL GIFTS</span><h3 data-ar="قلائد وأساور وميداليات" data-fa="گردنبند، دستبند و جاکلیدی" data-en="Necklaces, Bracelets & Keychains">قلائد وأساور وميداليات</h3><p data-ar="أفكار لهدايا تحمل صورتك أو ذكرى خاصة، حسب الخامات المتاحة." data-fa="هدیه‌هایی با عکس یا خاطره شخصی، بر اساس مواد موجود." data-en="Gifts featuring a photo or special memory, subject to available materials.">أفكار لهدايا تحمل صورتك أو ذكرى خاصة، حسب الخامات المتاحة.</p></div>
+      </article>
+    </div>
+    <div class="actions">
+      <a class="btn redbtn" href="https://wa.me/989335960566?text=Hello%20SaVaN%20Studio7" target="_blank" rel="noopener noreferrer" data-ar="اطلب هديتك عبر واتساب" data-fa="سفارش هدیه در واتساپ" data-en="Order a Gift on WhatsApp">اطلب هديتك عبر واتساب</a>
+    </div>
+  </div>
 </section>
 
-<section class="contact" id="contact">
-<h2 class="heading"><span data-ar="خلّينا نصنع شيئاً مميزاً" data-fa="بیایید اثری خاص بسازیم" data-en="Let's Create Something Special">خلّينا نصنع شيئاً مميزاً</span></h2>
-<p class="sub" data-ar="للطلب والاستفسار، تواصل معنا مباشرة." data-fa="برای سفارش و پرسش با ما تماس بگیرید." data-en="For bookings and inquiries, contact us directly.">للطلب والاستفسار، تواصل معنا مباشرة.</p>
-<a class="btn" href="https://wa.me/989335960566">WhatsApp</a>
-<a class="btn outline" href="https://www.instagram.com/n_svvn7">@n_svvn7</a>
+<section id="ai">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">03 / AI Creative Lab</div>
+      <h2 data-ar="مختبر الإبداع بالذكاء الاصطناعي" data-fa="آزمایشگاه خلاقیت هوش مصنوعی" data-en="AI Creative Lab">مختبر الإبداع بالذكاء الاصطناعي</h2>
+      <p data-ar="اكتب فكرتك، حسّن وصفها، ثم افتح خدمة خارجية لتجربة إنشاء الصور." data-fa="ایده‌ات را بنویس، متن را بهتر کن و سپس سرویس بیرونی ساخت تصویر را باز کن." data-en="Write your idea, improve the prompt, then open an external image-generation service.">اكتب فكرتك، حسّن وصفها، ثم افتح خدمة خارجية لتجربة إنشاء الصور.</p>
+    </div>
+    <div class="split">
+      <div class="toolbox">
+        <label for="prompt" data-ar="اكتب فكرة الصورة" data-fa="ایده تصویر را بنویس" data-en="Describe your image">اكتب فكرة الصورة</label>
+        <textarea id="prompt" placeholder="مثال: عطر فاخر على طاولة سوداء، إضاءة سينمائية..."></textarea>
+        <div class="tool-buttons">
+          <button class="btn" onclick="improvePrompt()" data-ar="تحسين البرومبت" data-fa="بهبود پرامپت" data-en="Improve Prompt">تحسين البرومبت</button>
+          <button class="btn redbtn" onclick="openImageAI()" data-ar="جرّب إنشاء الصور" data-fa="ساخت تصویر را امتحان کن" data-en="Try Image Generation">جرّب إنشاء الصور</button>
+          <button class="btn outline" onclick="copyPrompt()" data-ar="نسخ النص" data-fa="کپی متن" data-en="Copy Text">نسخ النص</button>
+        </div>
+        <p id="aiMessage" class="small-note" aria-live="polite">مولّد الصور خدمة خارجية، وقد يطلب تسجيل الدخول أو يفرض حدوداً مجانية.</p>
+      </div>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Creative visual inspiration">
+    </div>
+  </div>
 </section>
 
-<footer>SaVaN.Stodio7 © 2026 • Capture. Create. Inspire.</footer>
+<section class="dark-section" id="music">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">04 / Music Universe</div>
+      <h2 data-ar="عالم الموسيقى" data-fa="دنیای موسیقی" data-en="Music Universe">عالم الموسيقى</h2>
+      <p data-ar="استكشف الموسيقى، اعثر على أعمال تسمح تراخيصها بالاستخدام، أو تعرّف على منصات مشاركة موسيقاك." data-fa="موسیقی کشف کن، آثار دارای مجوز مناسب پیدا کن یا با پلتفرم‌های انتشار موسیقی آشنا شو." data-en="Discover music, find tracks with suitable licenses, or explore platforms for sharing your own music.">استكشف الموسيقى، اعثر على أعمال تسمح تراخيصها بالاستخدام، أو تعرّف على منصات مشاركة موسيقاك.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="card-body"><span class="tag">LISTEN</span><h3>SoundCloud</h3><p data-ar="اكتشف أعمالاً وموسيقى من فنانين مختلفين." data-fa="آثار و موسیقی هنرمندان مختلف را کشف کن." data-en="Discover tracks from different artists.">اكتشف أعمالاً وموسيقى من فنانين مختلفين.</p><a class="btn outline" href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer">Open SoundCloud ↗</a></div></article>
+      <article class="card"><div class="card-body"><span class="tag">SHARE YOUR MUSIC</span><h3>Bandcamp</h3><p data-ar="تعرّف على خيارات مشاركة وبيع أعمالك الموسيقية." data-fa="گزینه‌های انتشار و فروش آثار موسیقی را بررسی کن." data-en="Explore options for sharing and selling your music.">تعرّف على خيارات مشاركة وبيع أعمالك الموسيقية.</p><a class="btn outline" href="https://bandcamp.com/" target="_blank" rel="noopener noreferrer">Open Bandcamp ↗</a></div></article>
+      <article class="card"><div class="card-body"><span class="tag">LICENSED MUSIC</span><h3>Free Music Archive</h3><p data-ar="ابحث عن مقاطع موسيقية واقرأ ترخيص كل مقطع قبل تنزيله أو استخدامه." data-fa="موسیقی پیدا کن و پیش از دانلود یا استفاده، مجوز هر قطعه را بخوان." data-en="Find music and check each track's license before downloading or using it.">ابحث عن مقاطع موسيقية واقرأ ترخيص كل مقطع قبل تنزيله أو استخدامه.</p><a class="btn outline" href="https://freemusicarchive.org/" target="_blank" rel="noopener noreferrer">Explore Music ↗</a></div></article>
+    </div>
+    <p class="small-note" data-ar="ملاحظة: ليس كل ما يمكن الاستماع إليه مجاناً متاحاً للتنزيل أو الاستخدام التجاري. احترم حقوق الفنانين والتراخيص." data-fa="توجه: هر موسیقی رایگان برای شنیدن، لزوماً برای دانلود یا استفاده تجاری آزاد نیست. حقوق هنرمندان را رعایت کن." data-en="Note: Music that is free to stream is not necessarily free to download or use commercially. Respect artist rights and licenses.">ملاحظة: ليس كل ما يمكن الاستماع إليه مجاناً متاحاً للتنزيل أو الاستخدام التجاري. احترم حقوق الفنانين والتراخيص.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div class="eyebrow">05 / Let's Create</div>
+      <h2 data-ar="عندك فكرة؟ خلّينا ننفذها." data-fa="ایده‌ای داری؟ با هم اجراش کنیم." data-en="Have an Idea? Let's Create It.">عندك فكرة؟ خلّينا ننفذها.</h2>
+      <p data-ar="للتصوير، الفيديو، التصميم، والهدايا الشخصية — تواصل معنا." data-fa="برای عکاسی، ویدیو، طراحی و هدایای شخصی با ما تماس بگیر." data-en="Contact us for photography, video, design, and personalized gifts.">للتصوير، الفيديو، التصميم، والهدايا الشخصية — تواصل معنا.</p>
+      <div class="actions" style="justify-content:center">
+        <a class="btn redbtn" href="https://wa.me/989335960566" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn outline" href="https://www.instagram.com/n_svvn7/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/n_svvn7/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://youtube.com/@n_svvn7" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://t.me/Nabiil7" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </div>
+      <p class="small-note">Instagram: @n_svvn7 · Telegram: @Nabiil7</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#home">SaVaN<span>.</span>Stodio7</a>
+    <p>© 2026 SaVaN.Stodio7 — Photography · Design · Creative Studio</p>
+  </div>
+</footer>
+
 <script>
-function setLang(lang){
-document.documentElement.lang=lang;
-document.documentElement.dir=lang==="fa"||lang==="ar"?"rtl":"ltr";
-document.querySelectorAll("[data-"+lang+"]").forEach(function(el){
-el.textContent=el.getAttribute("data-"+lang);
-});
+function setLang(lang) {
+  const supported = ["ar", "fa", "en"];
+  if (!supported.includes(lang)) return;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "en") ? "ltr" : "rtl";
+  document.querySelectorAll("[data-" + lang + "]").forEach(function(el) {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+  const prompt = document.getElementById("prompt");
+  const placeholders = {
+    ar: "مثال: عطر فاخر على طاولة سوداء، إضاءة سينمائية...",
+    fa: "مثال: عطر لوکس روی میز سیاه با نورپردازی سینمایی...",
+    en: "Example: luxury perfume on a black table, cinematic lighting..."
+  };
+  prompt.placeholder = placeholders[lang];
+}
+function improvePrompt() {
+  const box = document.getElementById("prompt");
+  const lang = document.documentElement.lang;
+  const idea = box.value.trim();
+  if (!idea) {
+    document.getElementById("aiMessage").textContent =
+      lang === "en" ? "Write an image idea first." :
+      lang === "fa" ? "ابتدا ایده تصویر را بنویس." :
+      "اكتب فكرة الصورة أولاً.";
+    box.focus();
+    return;
+  }
+  const extra = ", luxury editorial photography, cinematic lighting, refined composition, realistic details, premium color grading, high-quality visual";
+  if (!idea.toLowerCase().includes("cinematic lighting")) box.value = idea + extra;
+  document.getElementById("aiMessage").textContent =
+    lang === "en" ? "Prompt improved. You can copy it or open the image tool." :
+    lang === "fa" ? "پرامپت بهتر شد. می‌توانی آن را کپی کنی یا ابزار تصویر را باز کنی." :
+    "تم تحسين البرومبت. تقدر تنسخه أو تفتح أداة الصور.";
+}
+function openImageAI() {
+  const prompt = document.getElementById("prompt").value.trim();
+  if (prompt) {
+    window.open("https://www.bing.com/images/create", "_blank", "noopener,noreferrer");
+  } else {
+    document.getElementById("prompt").focus();
+    document.getElementById("aiMessage").textContent =
+      "اكتب فكرتك أولاً، ثم افتح مولّد الصور الخارجي.";
+  }
+}
+async function copyPrompt() {
+  const box = document.getElementById("prompt");
+  const lang = document.documentElement.lang;
+  if (!box.value.trim()) {
+    document.getElementById("aiMessage").textContent =
+      lang === "en" ? "There is no text to copy." :
+      lang === "fa" ? "متنی برای کپی وجود ندارد." :
+      "ماكو نص حتى تنسخه.";
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(box.value);
+    document.getElementById("aiMessage").textContent =
+      lang === "en" ? "Copied!" : lang === "fa" ? "کپی شد!" : "تم النسخ!";
+  } catch (e) {
+    box.select();
+    document.getElementById("aiMessage").textContent =
+      lang === "en" ? "Select the text and copy it manually." :
+      lang === "fa" ? "متن را انتخاب کن و دستی کپی کن." :
+      "حدد النص وانسخه يدوياً.";
+  }
 }
 </script>
 </body>
