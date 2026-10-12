@@ -1,675 +1,169 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="SeVeN Studio7 — Photography, Cinematic Video, Creative Design and Personalized Photo Gifts.">
-<title>SeVeN Studio7 | عالم الصورة والإبداع</title>
-
-<style>
-:root {
-  --bg:#090909;
-  --panel:#151515;
-  --red:#c21f35;
-  --gold:#d5b477;
-  --white:#fff;
-  --muted:#b9b9b9;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{
-  margin:0;background:var(--bg);color:var(--white);
-  font-family:Tahoma,Arial,sans-serif;line-height:1.8;
-}
-a{color:inherit;text-decoration:none}
-button,input,select{font:inherit}
-button,a{touch-action:manipulation}
-img{max-width:100%;display:block}
-.container{width:min(1160px,92%);margin:auto}
-.gold{color:var(--gold)}
-.red{color:var(--red)}
-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(8,8,8,.94);backdrop-filter:blur(14px);
-  border-bottom:1px solid #292929;
-}
-.nav{
-  min-height:72px;display:flex;align-items:center;
-  justify-content:space-between;gap:15px;flex-wrap:wrap;padding:10px 0;
-}
-.logo{font-size:23px;font-weight:900;letter-spacing:1px}
-.logo b{color:var(--red)}
-nav{display:flex;gap:17px;flex-wrap:wrap;font-size:13px}
-nav a:hover{color:var(--gold)}
-.langs{display:flex;gap:5px}
-.langs button{
-  background:#171717;border:1px solid #444;color:white;
-  border-radius:6px;padding:5px 8px;cursor:pointer;font-size:12px
-}
-.langs button.active{border-color:var(--gold);color:var(--gold)}
-.hero{
-  min-height:650px;position:relative;display:flex;align-items:center;
-  overflow:hidden;background:#111;
-}
-.hero-bg,.hero-shade{position:absolute;inset:0}
-.hero-bg img{
-  position:absolute;width:100%;height:100%;object-fit:cover;
-  opacity:0;transition:opacity 1.3s ease,transform 5s ease;
-  transform:scale(1.07);
-}
-.hero-bg img.active{opacity:1;transform:scale(1)}
-.hero-shade{
-  background:linear-gradient(90deg,rgba(0,0,0,.38),rgba(0,0,0,.88)),
-  linear-gradient(0deg,#090909 0%,transparent 40%);
-}
-.hero-content{position:relative;z-index:2;padding:80px 0;max-width:780px}
-.eyebrow{
-  color:var(--gold);letter-spacing:3px;font-size:12px;
-  text-transform:uppercase;
-}
-h1{font-size:clamp(37px,7vw,76px);line-height:1.2;margin:18px 0}
-.hero p{font-size:clamp(16px,2.5vw,21px);color:#e4e4e4;max-width:620px}
-.hero-caption{min-height:55px;transition:opacity .5s}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{
-  display:inline-flex;justify-content:center;align-items:center;
-  padding:12px 20px;border-radius:5px;font-weight:bold;
-  border:1px solid var(--gold);cursor:pointer;transition:.25s;
-}
-.btn-primary{background:var(--red);border-color:var(--red);color:white}
-.btn-outline{background:rgba(0,0,0,.3);color:white}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
-.dots{display:flex;gap:8px;margin-top:25px}
-.dot{width:22px;height:4px;border:0;background:#777;cursor:pointer}
-.dot.active{background:var(--gold);width:38px}
-section{padding:76px 0}
-.section-head{text-align:center;margin-bottom:35px}
-.section-head .eyebrow{letter-spacing:2px}
-h2{font-size:clamp(27px,4vw,42px);line-height:1.35;margin:8px 0 12px}
-.section-head p{color:var(--muted);max-width:650px;margin:auto}
-.intro-grid,.services,.gallery,.gift-grid,.contact-grid{
-  display:grid;gap:18px;
-}
-.intro-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.services{grid-template-columns:repeat(3,minmax(0,1fr))}
-.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
-.gift-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.card{
-  background:linear-gradient(145deg,#191919,#101010);
-  border:1px solid #292929;border-radius:12px;overflow:hidden;
-  transition:transform .3s,border-color .3s;
-}
-.card:hover{transform:translateY(-5px);border-color:#806741}
-.card-body{padding:20px}
-.card h3{margin:0 0 8px;font-size:19px}
-.card p{color:var(--muted);font-size:14px;margin:0 0 15px}
-.icon{font-size:28px;margin-bottom:8px}
-.photo{
-  height:245px;position:relative;overflow:hidden;background:#202020;
-}
-.photo img{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;opacity:0;transition:opacity 1s,transform 4s;
-  transform:scale(1.04);cursor:zoom-in;
-}
-.photo img.active{opacity:1;transform:scale(1)}
-.photo-tag{
-  position:absolute;bottom:12px;right:12px;z-index:2;
-  background:rgba(0,0,0,.72);padding:5px 10px;
-  border-right:2px solid var(--gold);font-size:12px;
-}
-.photo-count{
-  position:absolute;top:12px;left:12px;z-index:2;
-  background:rgba(0,0,0,.7);border-radius:5px;padding:2px 8px;font-size:11px;
-}
-.text-link{color:var(--gold);font-size:13px;font-weight:bold}
-.dark-section{background:#101010;border-top:1px solid #202020;border-bottom:1px solid #202020}
-.gift-card .photo{height:205px}
-.note{
-  border-right:3px solid var(--red);padding:13px 16px;
-  background:#151515;color:#ddd;font-size:14px;margin-top:25px
-}
-.ai-box{
-  background:linear-gradient(135deg,#171717,#0c0c0c);
-  border:1px solid #383027;border-radius:14px;padding:28px;
-}
-.ai-box p{color:var(--muted)}
-.ai-controls{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.field label{display:block;font-size:13px;margin-bottom:7px;color:#ddd}
-.field input,.field select{
-  width:100%;background:#0b0b0b;color:white;border:1px solid #454545;
-  padding:12px;border-radius:6px;min-width:0
-}
-.ai-result{
-  background:#090909;border:1px dashed #5c4b31;
-  padding:15px;border-radius:7px;margin:18px 0;white-space:pre-wrap;
-  overflow-wrap:anywhere;color:#eee;font-size:14px
-}
-.contact-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.contact-link{
-  padding:17px 10px;text-align:center;background:#151515;
-  border:1px solid #303030;border-radius:8px
-}
-.contact-link strong{display:block;color:var(--gold);margin-bottom:4px}
-footer{padding:30px 0;text-align:center;border-top:1px solid #292929;color:#aaa;font-size:13px}
-footer .logo{margin-bottom:8px}
-.lightbox{
-  position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:100;
-  display:none;align-items:center;justify-content:center;padding:18px;
-}
-.lightbox.open{display:flex}
-.lightbox img{max-height:85vh;max-width:95vw;object-fit:contain}
-.close-lightbox{
-  position:absolute;top:15px;left:20px;font-size:30px;color:white;
-  background:none;border:0;cursor:pointer
-}
-@media(max-width:760px){
-  .nav{justify-content:center}
-  .logo{width:100%;text-align:center}
-  nav{justify-content:center;gap:12px}
-  .hero{min-height:570px}
-  .hero-content{padding:70px 0}
-  .intro-grid,.services,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .gift-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .photo{height:205px}
-}
-@media(max-width:420px){
-  nav{font-size:12px;gap:9px}
-  .intro-grid,.services,.gallery{grid-template-columns:1fr}
-  .photo{height:250px}
-  .gift-card .photo{height:220px}
-  .ai-controls{grid-template-columns:1fr}
-  section{padding:55px 0}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeVeN Studio7 | معاينة التصميم</title>
+    <!-- استدعاء Tailwind CSS للتصميم المتجاوب -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- استدعاء الخطوط الفاخرة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        's-black': '#050505',
+                        's-dark': '#111111',
+                        's-red': '#991b1b',
+                        's-red-glow': '#dc2626',
+                        's-gold': '#d4af37',
+                    },
+                    fontFamily: {
+                        'main': ['Cairo', 'sans-serif'],
+                        'en': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Cairo', sans-serif; background-color: #050505; color: #ffffff; }
+        .gold-text { color: #d4af37; }
+        .red-glow:hover { box-shadow: 0 0 20px rgba(153, 27, 27, 0.6); transition: all 0.3s ease; }
+        .image-hover:hover { transform: scale(1.03); transition: transform 0.4s ease; }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
-<header>
-  <div class="container nav">
-    <a class="logo" href="#home" aria-label="SeVeN Studio7">
-      SeVeN <b>Studio7</b>
-    </a>
-    <nav>
-      <a href="#home" data-i="home">الرئيسية</a>
-      <a href="#services" data-i="services">خدماتنا</a>
-      <a href="#portfolio" data-i="portfolio">أعمالنا</a>
-      <a href="#gifts" data-i="gifts">هدايا الصور</a>
-      <a href="#ai" data-i="ai">عالم AI</a>
-      <a href="#contact" data-i="contact">تواصل</a>
+    <!-- 1. شريط التنقل (يتغير بين الموبايل واللابتوب) -->
+    <nav class="fixed w-full z-50 bg-s-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- الشعار -->
+                <div class="flex-shrink-0">
+                    <span class="font-en text-2xl font-bold tracking-wider text-white">
+                        SeVeN <span class="text-s-red">Studio7</span>
+                    </span>
+                </div>
+                
+                <!-- روابط اللابتوب (تختفي في الموبايل) -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
+                        <a href="#" class="text-white hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">الرئيسية</a>
+                        <a href="#" class="text-gray-300 hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">معرض الأعمال</a>
+                        <a href="#" class="text-gray-300 hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">مختبر الذكاء الاصطناعي</a>
+                        <a href="#" class="text-gray-300 hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">الهدايا المطبوعة</a>
+                    </div>
+                </div>
+
+                <!-- زر الموبايل (يظهر فقط في الموبايل) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-s-red focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
     </nav>
-    <div class="langs">
-      <button class="active" data-lang="ar">عربي</button>
-      <button data-lang="fa">فارسی</button>
-      <button data-lang="en">EN</button>
-    </div>
-  </div>
-</header>
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-shade"></div>
-  <div class="container hero-content">
-    <div class="eyebrow">PHOTOGRAPHY · CINEMA · CREATIVE DESIGN</div>
-    <div id="heroText">
-      <h1>مو مجرد صورة…<br><span class="gold">هذه حكاية تبقى</span></h1>
-      <p>أهلًا بكم في عالمنا وعالم الاستوديو؛ حيث تتحول اللحظات إلى ذكريات، والأفكار إلى أعمال فنية.</p>
-    </div>
-    <div class="actions">
-      <a class="btn btn-primary" href="#portfolio" data-i="explore">اكتشف أعمالنا</a>
-      <a class="btn btn-outline" href="https://wa.me/989335960566" target="_blank" rel="noopener" data-i="order">اطلب تصميمك</a>
-    </div>
-    <div class="dots" id="heroDots" aria-label="اختيار الخلفية"></div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">WELCOME TO OUR WORLD</div>
-      <h2>أهلًا بكم في <span class="gold">عالمنا</span></h2>
-      <p>نصنع صورًا وتصاميم وهدايا شخصية تحمل معنى، بتفاصيل أنيقة ولمسة سينمائية.</p>
-    </div>
-    <div class="intro-grid">
-      <article class="card"><div class="card-body">
-        <div class="icon">📸</div><h3>فن التصوير</h3>
-        <p>صور شخصية، عائلية، مناسبات وبورتريه بأسلوب فني.</p>
-      </div></article>
-      <article class="card"><div class="card-body">
-        <div class="icon">🎬</div><h3>الفيديو والإعلان</h3>
-        <p>فيديوهات إعلانية ومقاطع قصيرة تحكي قصة مشروعك.</p>
-      </div></article>
-      <article class="card"><div class="card-body">
-        <div class="icon">🎁</div><h3>هدايا من صورك</h3>
-        <p>حوّل صورك المفضلة إلى هدايا شخصية للمكتب والمنزل.</p>
-      </div></article>
-    </div>
-  </div>
-</section>
-
-<section class="dark-section" id="services">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">WHAT WE CREATE</div>
-      <h2>خدمات <span class="gold">الاستوديو</span></h2>
-      <p>من الفكرة الأولى إلى النتيجة النهائية، نعتني بالتفاصيل.</p>
-    </div>
-    <div class="services">
-      <article class="card"><div class="card-body">
-        <div class="icon">📷</div><h3>تصوير احترافي</h3>
-        <p>بورتريه، عائلة، مناسبات، صور منتجات وألبومات.</p>
-        <a class="text-link" href="https://wa.me/989335960566">استفسر عن الخدمة ←</a>
-      </div></article>
-      <article class="card"><div class="card-body">
-        <div class="icon">🎥</div><h3>تصوير ومونتاج</h3>
-        <p>ريلز، فيديوهات ترويجية، مونتاج سينمائي ومحتوى اجتماعي.</p>
-        <a class="text-link" href="https://wa.me/989335960566">استفسر عن الخدمة ←</a>
-      </div></article>
-      <article class="card"><div class="card-body">
-        <div class="icon">✦</div><h3>تصميم إعلاني</h3>
-        <p>تصاميم للمتاجر والمنتجات والصفحات والمشاريع التجارية.</p>
-        <a class="text-link" href="https://wa.me/989335960566">استفسر عن الخدمة ←</a>
-      </div></article>
-    </div>
-  </div>
-</section>
-
-<section id="portfolio">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">SELECTED WORKS</div>
-      <h2>معرض <span class="gold">أعمالنا</span></h2>
-      <p>كل مربع يعرض أربع صور بالتتابع. اضغط على الصورة لعرضها بحجم أكبر.</p>
-    </div>
-    <div class="gallery" id="portfolioGrid"></div>
-  </div>
-</section>
-
-<section class="dark-section" id="gifts">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">YOUR MEMORIES, YOUR STYLE</div>
-      <h2>هدايا الصور <span class="gold">الشخصية</span></h2>
-      <p>ذكرياتك مو بس داخل الهاتف؛ خليها جزءًا من ديكورك أو هدية لشخص عزيز.</p>
-    </div>
-    <div class="gift-grid" id="giftGrid"></div>
-    <div class="note">
-      <strong class="gold">ملاحظة:</strong>
-      صور المنتجات هنا أمثلة توضيحية. استبدلها بصور منتجاتك الحقيقية حتى يشوف الزبون الشغل الفعلي قبل الطلب.
-    </div>
-  </div>
-</section>
-
-<section id="ai">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">CREATIVE AI LAB</div>
-      <h2>مختبر الأفكار <span class="gold">بالذكاء الاصطناعي</span></h2>
-      <p>جهّز وصفًا لفكرتك حتى تستخدمه في أداة إنشاء الصور أو تعديلها. هذه الصفحة تجهز النص ولا تنشئ الصورة بنفسها.</p>
-    </div>
-    <div class="ai-box">
-      <div class="ai-controls">
-        <div class="field">
-          <label for="subject">شنو تريد تصمم؟</label>
-          <input id="subject" placeholder="مثال: صورة منتج، بورتريه، هدية بصورة شخصية">
+    <!-- 2. القسم الرئيسي (Hero Section) -->
+    <div class="relative pt-32 pb-12 sm:pt-40 sm:pb-16 lg:pb-24 overflow-hidden">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <!-- النص -->
+            <div class="text-center md:text-right md:w-1/2 mb-10 md:mb-0 z-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+                    حيث يلتقي <span class="text-s-red">الإبداع</span><br>
+                    بالفخامة <span class="gold-text">والذكاء الاصطناعي</span>
+                </h1>
+                <p class="mt-4 text-xl text-gray-400 max-w-lg mx-auto md:mx-0 mb-8">
+                    استوديو SeVeN Studio7 يقدم لك تجربة تصوير سينمائية، وتصاميم ذكاء اصطناعي حصرية، وهدايا شخصية مطبوعة بأعلى جودة.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#" class="red-glow bg-s-red text-white font-bold py-3 px-8 rounded-full text-center">استكشف المعرض</a>
+                    <a href="#" class="border border-s-gold text-s-gold hover:bg-s-gold hover:text-s-black font-bold py-3 px-8 rounded-full text-center transition">اطلب خدمة الآن</a>
+                </div>
+            </div>
+            <!-- الصورة التوضيحية -->
+            <div class="md:w-1/2 relative z-10">
+                <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl border border-white/10 image-hover">
+                    <!-- صورة وهمية عالية الجودة للتوضيح -->
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="SeVeN Studio7 Photography" class="object-cover w-full h-64 md:h-96">
+                    <div class="absolute inset-0 bg-gradient-to-t from-s-black via-transparent to-transparent"></div>
+                </div>
+            </div>
         </div>
-        <div class="field">
-          <label for="style">الأسلوب</label>
-          <select id="style">
-            <option value="cinematic luxury lighting, realistic photography">سينمائي فاخر</option>
-            <option value="classic elegant studio portrait photography">كلاسيكي أنيق</option>
-            <option value="minimal luxury product advertisement">إعلان منتجات</option>
-            <option value="warm natural light, authentic lifestyle photography">طبيعي ودافئ</option>
-          </select>
+    </div>
+
+    <!-- 3. معرض الأعمال (يوضح الفرق بين شبكة الموبايل واللابتوب) -->
+    <div class="bg-s-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-2">أحدث الأعمال المميزة</h2>
+                <div class="w-24 h-1 bg-s-red mx-auto rounded-full"></div>
+            </div>
+
+            <!-- الشبكة: عمود واحد في الموبايل، 2 في التابلت، 3 في اللابتوب -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- بطاقة 1 -->
+                <div class="bg-s-black rounded-xl overflow-hidden border border-white/5 image-hover group">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-s-red text-white text-xs font-bold px-3 py-1 rounded-full">أعراس</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">تصوير الأعراس والمناسبات</h3>
+                        <p class="text-gray-400 text-sm mb-4">توثيق لحظاتكم السعيدة بأسلوب سينمائي فاخر.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-s-gold text-sm">⭐ 4.9</span>
+                            <button class="text-white border border-white/20 hover:bg-s-red hover:border-s-red px-4 py-2 rounded-lg text-sm transition">عرض التفاصيل</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بطاقة 2 -->
+                <div class="bg-s-black rounded-xl overflow-hidden border border-white/5 image-hover group">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-s-gold text-s-black text-xs font-bold px-3 py-1 rounded-full">ذكاء اصطناعي</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">بورتريه بالذكاء الاصطناعي</h3>
+                        <p class="text-gray-400 text-sm mb-4">تحويل صوركم إلى لوحات فنية رقمية بأساليب عالمية.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-s-gold text-sm">⭐ 5.0</span>
+                            <button class="text-white border border-white/20 hover:bg-s-red hover:border-s-red px-4 py-2 rounded-lg text-sm transition">جرب الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بطاقة 3 -->
+                <div class="bg-s-black rounded-xl overflow-hidden border border-white/5 image-hover group">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-full">هدايا مطبوعة</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">ألبومات وهدايا شخصية</h3>
+                        <p class="text-gray-400 text-sm mb-4">طباعة فورية عالية الجودة بكاميرا Canon SELPHY CP1500.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-s-gold text-sm">⭐ 4.8</span>
+                            <button class="text-white border border-white/20 hover:bg-s-red hover:border-s-red px-4 py-2 rounded-lg text-sm transition">اطلب الآن</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="field">
-          <label for="colors">الألوان</label>
-          <select id="colors">
-            <option value="black, white, deep red and subtle gold">أسود وأبيض وأحمر وذهبي</option>
-            <option value="warm beige, cream and brown">بيج وكريمي وبني</option>
-            <option value="deep blue and silver">أزرق داكن وفضي</option>
-            <option value="natural neutral colors">ألوان طبيعية</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="format">أبعاد الصورة</label>
-          <select id="format">
-            <option value="vertical 9:16 composition">ستوري / ريلز 9:16</option>
-            <option value="portrait 4:5 composition">منشور 4:5</option>
-            <option value="horizontal 16:9 composition">أفقي 16:9</option>
-            <option value="square 1:1 composition">مربع 1:1</option>
-          </select>
-        </div>
-      </div>
-      <div class="ai-result" id="aiResult">اكتب فكرتك واضغط «إنشاء وصف» حتى يظهر لك نص جاهز للنسخ.</div>
-      <div class="actions">
-        <button class="btn btn-primary" id="makePrompt">إنشاء وصف</button>
-        <button class="btn btn-outline" id="copyPrompt">نسخ الوصف</button>
-        <a class="btn btn-outline" href="https://chatgpt.com/" target="_blank" rel="noopener">افتح ChatGPT</a>
-      </div>
     </div>
-  </div>
-</section>
 
-<section class="dark-section" id="contact">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">LET'S CREATE SOMETHING SPECIAL</div>
-      <h2>خلّينا نصنع <span class="gold">شيئًا مميزًا</span></h2>
-      <p>للطلبات والاستفسارات والتعاون، تواصل معنا من خلال صفحاتنا الرسمية.</p>
-    </div>
-    <div class="contact-grid">
-      <a class="contact-link" href="https://www.instagram.com/n_svvn7/" target="_blank" rel="noopener">
-        <strong>Instagram</strong><span>@n_svvn7</span>
-      </a>
-      <a class="contact-link" href="https://wa.me/989335960566" target="_blank" rel="noopener">
-        <strong>WhatsApp</strong><span>راسلنا للطلب</span>
-      </a>
-      <a class="contact-link" href="https://youtube.com/@n_svvn7" target="_blank" rel="noopener">
-        <strong>YouTube</strong><span>شاهد أعمالنا</span>
-      </a>
-      <a class="contact-link" href="https://t.me/Nabiil7" target="_blank" rel="noopener">
-        <strong>Telegram</strong><span>@Nabiil7</span>
-      </a>
-    </div>
-  </div>
-</section>
-</main>
+    <!-- 4. زر واتساب العائم -->
+    <a href="https://wa.me/989335960566" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-2xl transition transform hover:scale-110 flex items-center gap-2">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+        <span class="hidden sm:inline font-bold">تواصل عبر واتساب</span>
+    </a>
 
-<footer>
-  <div class="container">
-    <div class="logo">SeVeN <b class="red">Studio7</b></div>
-    <div>الصورة ذكرى، والإبداع حكاية.</div>
-    <div>© <span id="year"></span> SeVeN Studio7 · All rights reserved</div>
-  </div>
-</footer>
-
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة">
-  <button class="close-lightbox" id="closeLightbox" aria-label="إغلاق">×</button>
-  <img id="lightboxImg" src="" alt="صورة من معرض الاستوديو">
-</div>
-
-<script>
-const img = (id, w=1000) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`;
-
-const photos = {
-  hero: [
-    img("photo-1492691527719-9d1e07e534b4",1800),
-    img("photo-1516035069371-29a1b244cc32",1800),
-    img("photo-151撮影",1800)
-  ],
-  portrait: [
-    img("photo-1506794778202-cad84cf45f1d"),
-    img("photo-1500648767791-00dcc994a43e"),
-    img("photo-1534528741775-53994a69daeb"),
-    img("photo-1524504388940-b1c1722653e1")
-  ],
-  family: [
-    img("photo-1511895426328-dc8714191300"),
-    img("photo-1478131143081-80f7f84ca84d"),
-    img("photo-1511988617509-a57c8a288659"),
-    img("photo-1516627145497-ae6968895b74")
-  ],
-  wedding: [
-    img("photo-1519741497674-611481863552"),
-    img("photo-1537633552985-df8429e8048b"),
-    img("photo-1511285560929-80b456fea0bc"),
-    img("photo-1465495976277-4387d4b0e4a6")
-  ],
-  products: [
-    img("photo-1542291026-7eec264c27ff"),
-    img("photo-1523275335684-37898b6baf30"),
-    img("photo-1526170375885-4d8ecf77b99f"),
-    img("photo-1548036328-c9fa89d128fa")
-  ],
-  design: [
-    img("photo-1558655146-d09347e92766"),
-    img("photo-1557683316-973673baf926"),
-    img("photo-1545235617-9465d2a55698"),
-    img("photo-1550745165-9bc0b252726f")
-  ],
-  video: [
-    img("photo-1492619375914-88005aa9e8fb"),
-    img("photo-1485846234645-a62644f84728"),
-    img("photo-1478720568477-152d9b164e26"),
-    img("photo-1492619375914-88005aa9e8fb")
-  ],
-  album: [
-    img("photo-1516035069371-29a1b244cc32"),
-    img("photo-1519741497674-611481863552"),
-    img("photo-1511285560929-80b456fea0bc"),
-    img("photo-1492691527719-9d1e07e534b4")
-  ],
-  tabletop: [
-    img("photo-1513519245088-0e12902e5a38"),
-    img("photo-1577083552431-6e5fd01aa342"),
-    img("photo-1490312278390-ab64016e0aa9"),
-    img("photo-1503602642458-232111445657")
-  ],
-  hanging: [
-    img("photo-1513519245088-0e12902e5a38"),
-    img("photo-1455390582262-044cdead277a"),
-    img("photo-1490312278390-ab64016e0aa9"),
-    img("photo-1505693416388-ac5ce068fe85")
-  ],
-  magnets: [
-    img("photo-1513519245088-0e12902e5a38"),
-    img("photo-1503602642458-232111445657"),
-    img("photo-1490312278390-ab64016e0aa9"),
-    img("photo-1505693416388-ac5ce068fe85")
-  ],
-  keychains: [
-    img("photo-1513519245088-0e12902e5a38"),
-    img("photo-1523275335684-37898b6baf30"),
-    img("photo-1548036328-c9fa89d128fa"),
-    img("photo-1490312278390-ab64016e0aa9")
-  ]
-};
-
-// الخلفيات الرئيسية: تتبدل كل 3 ثوانٍ مع النص.
-const heroSlides = [
-  {
-    image: img("photo-1492691527719-9d1e07e534b4",1800),
-    title:"مو مجرد صورة…",
-    highlight:"هذه حكاية تبقى",
-    text:"أهلًا بكم في عالمنا وعالم الاستوديو؛ حيث تتحول اللحظات إلى ذكريات، والأفكار إلى أعمال فنية."
-  },
-  {
-    image: img("photo-1516035069371-29a1b244cc32",1800),
-    title:"نلتقط اللحظة،",
-    highlight:"ونحفظ الإحساس",
-    text:"من التصوير الاحترافي إلى الفيديو السينمائي؛ نصنع محتوى يعبّر عنك وعن فكرتك."
-  },
-  {
-    image: img("photo-1519741497674-611481863552",1800),
-    title:"كل ذكرى تستحق",
-    highlight:"أن تبقى قريبة",
-    text:"ألبومات وهدايا شخصية وتصاميم مميزة، تفاصيل صغيرة تحمل معاني كبيرة."
-  },
-  {
-    image: img("photo-1558655146-d09347e92766",1800),
-    title:"فكرتك تبدأ هنا،",
-    highlight:"وإبداعك ما له حدود",
-    text:"اكتشف عالم SeVeN Studio7، وخلي فكرتك تتحول إلى تجربة بصرية مميزة."
-  }
-];
-
-const heroBg = document.getElementById("heroBg");
-const heroText = document.getElementById("heroText");
-const heroDots = document.getElementById("heroDots");
-let heroIndex = 0;
-let heroTimer;
-
-heroSlides.forEach((s,i)=>{
-  const image=document.createElement("img");
-  image.src=s.image;
-  image.alt="خلفية سينمائية للاستوديو";
-  image.className=i===0?"active":"";
-  image.fetchPriority=i===0?"high":"auto";
-  heroBg.appendChild(image);
-
-  const dot=document.createElement("button");
-  dot.className="dot"+(i===0?" active":"");
-  dot.setAttribute("aria-label","الخلفية "+(i+1));
-  dot.onclick=()=>{showHero(i);startHeroTimer()};
-  heroDots.appendChild(dot);
-});
-
-function showHero(index){
-  heroIndex=index;
-  [...heroBg.children].forEach((el,i)=>el.classList.toggle("active",i===index));
-  [...heroDots.children].forEach((el,i)=>el.classList.toggle("active",i===index));
-  const s=heroSlides[index];
-  heroText.style.opacity=0;
-  setTimeout(()=>{
-    heroText.innerHTML=`<h1>${s.title}<br><span class="gold">${s.highlight}</span></h1><p>${s.text}</p>`;
-    heroText.style.opacity=1;
-  },250);
-}
-function startHeroTimer(){
-  clearInterval(heroTimer);
-  heroTimer=setInterval(()=>showHero((heroIndex+1)%heroSlides.length),3000);
-}
-startHeroTimer();
-
-// إنشاء بطاقات الصور؛ كل بطاقة تملك أربع صور تتغير كل 3 ثوانٍ.
-const portfolioItems=[
-  {key:"portrait",title:"البورتريه والشخصي",desc:"صور شخصية بلمسة فنية."},
-  {key:"family",title:"العائلة والذكريات",desc:"لحظات جميلة تستحق الحفظ."},
-  {key:"wedding",title:"المناسبات والألبومات",desc:"توثيق التفاصيل واللحظات."},
-  {key:"products",title:"تصوير المنتجات",desc:"صور تساعد على إبراز المنتج."},
-  {key:"design",title:"التصميم الإبداعي",desc:"أفكار بصرية للإعلانات والمشاريع."},
-  {key:"video",title:"الفيديو والسينما",desc:"عالم الحركة والسرد البصري."}
-];
-const giftItems=[
-  {key:"album",title:"ألبومات الصور",desc:"اجمع ذكرياتك في ألبوم خاص."},
-  {key:"tabletop",title:"صور روميزية",desc:"صور مكتبية وديكور بالذكريات."},
-  {key:"hanging",title:"صور معلّقة",desc:"تفاصيل شخصية لجدران المنزل."},
-  {key:"magnets",title:"صور مغناطيسية",desc:"صور للتثبيت على الأسطح المعدنية المناسبة."},
-  {key:"keychains",title:"ميداليات الصور",desc:"صور صغيرة ترافقك أينما تذهب."}
-];
-
-function createCard(item,gift=false){
-  const card=document.createElement("article");
-  card.className="card"+(gift?" gift-card":"");
-  const sources=photos[item.key]||[];
-  card.innerHTML=`
-    <div class="photo">
-      ${sources.map((src,i)=>`<img src="${src}" alt="${item.title}" class="${i===0?"active":""}" loading="lazy" ${i===0?'fetchpriority="low"':""}>`).join("")}
-      <span class="photo-tag">${item.title}</span>
-      <span class="photo-count">1 / ${sources.length}</span>
-    </div>
-    <div class="card-body">
-      <h3>${item.title}</h3>
-      <p>${item.desc}</p>
-      <a class="text-link" href="https://wa.me/989335960566?text=${encodeURIComponent("مرحبًا SeVeN Studio7، أريد الاستفسار عن: "+item.title)}" target="_blank" rel="noopener">استفسر عن الطلب ←</a>
-    </div>`;
-  const images=[...card.querySelectorAll(".photo img")];
-  let current=0;
-  const count=card.querySelector(".photo-count");
-  const rotate=()=>{
-    images[current].classList.remove("active");
-    current=(current+1)%images.length;
-    images[current].classList.add("active");
-    count.textContent=(current+1)+" / "+images.length;
-  };
-  setInterval(rotate,3000);
-  card.querySelector(".photo").addEventListener("click",()=>{
-    openLightbox(images[current].src,images[current].alt);
-  });
-  return card;
-}
-
-const portfolioGrid=document.getElementById("portfolioGrid");
-portfolioItems.forEach(item=>portfolioGrid.appendChild(createCard(item)));
-const giftGrid=document.getElementById("giftGrid");
-giftItems.forEach(item=>giftGrid.appendChild(createCard(item,true)));
-
-// عارض الصور
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightboxImg");
-function openLightbox(src,alt){
-  lightboxImg.src=src;lightboxImg.alt=alt;lightbox.classList.add("open");
-}
-function closeLightbox(){
-  lightbox.classList.remove("open");lightboxImg.src="";
-}
-document.getElementById("closeLightbox").onclick=closeLightbox;
-lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});
-
-// مولّد وصف لفكرة الصورة
-const result=document.getElementById("aiResult");
-document.getElementById("makePrompt").onclick=()=>{
-  const subject=document.getElementById("subject").value.trim();
-  if(!subject){
-    result.textContent="اكتب فكرتك أولًا، مثل: تصميم إعلان لمنتج أو صورة هدية شخصية.";
-    document.getElementById("subject").focus();
-    return;
-  }
-  result.textContent=
-`Create a high-quality visual for: ${subject}.
-Style: ${document.getElementById("style").value}.
-Color palette: ${document.getElementById("colors").value}.
-Composition: ${document.getElementById("format").value}.
-Use realistic materials, professional lighting, refined composition, crisp details and natural textures.
-Avoid distorted faces, malformed hands, artificial-looking skin, random text and watermarks.
-Preserve the identity of any person in a supplied reference photo.
-Brand mood: SeVeN Studio7, elegant, cinematic and professional.`;
-};
-document.getElementById("copyPrompt").onclick=async()=>{
-  const text=result.textContent;
-  try{
-    await navigator.clipboard.writeText(text);
-    document.getElementById("copyPrompt").textContent="تم النسخ ✓";
-    setTimeout(()=>document.getElementById("copyPrompt").textContent="نسخ الوصف",1800);
-  }catch(e){
-    const area=document.createElement("textarea");
-    area.value=text;document.body.appendChild(area);
-    area.select();
-    try{document.execCommand("copy")}catch(_){}
-    area.remove();
-    document.getElementById("copyPrompt").textContent="حاول النسخ مرة أخرى";
-  }
-};
-
-// تغيير لغة واجهة النصوص الرئيسية
-const translations={
-  ar:{
-    home:"الرئيسية",services:"خدماتنا",portfolio:"أعمالنا",gifts:"هدايا الصور",ai:"عالم AI",contact:"تواصل",
-    explore:"اكتشف أعمالنا",order:"اطلب تصميمك"
-  },
-  fa:{
-    home:"خانه",services:"خدمات ما",portfolio:"نمونه‌کارها",gifts:"هدایای تصویری",ai:"دنیای هوش مصنوعی",contact:"تماس",
-    explore:"مشاهده آثار",order:"سفارش طراحی"
-  },
-  en:{
-    home:"Home",services:"Services",portfolio:"Portfolio",gifts:"Photo Gifts",ai:"AI Lab",contact:"Contact",
-    explore:"Explore Our Work",order:"Order a Design"
-  }
-};
-document.querySelectorAll("[data-lang]").forEach(button=>{
-  button.addEventListener("click",()=>{
-    const lang=button.dataset.lang;
-    document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b===button));
-    document.documentElement.lang=lang;
-    document.documentElement.dir=lang==="en"?"ltr":"rtl";
-    document.querySelectorAll("[data-i]").forEach(el=>{
-      const key=el.dataset.i;
-      if(translations[lang][key])el.textContent=translations[lang][key];
-    });
-  });
-});
-
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
 </body>
 </html>
