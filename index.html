@@ -1,169 +1,78 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeVeN Studio7 | معاينة التصميم</title>
-    <!-- استدعاء Tailwind CSS للتصميم المتجاوب -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- استدعاء الخطوط الفاخرة -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        's-black': '#050505',
-                        's-dark': '#111111',
-                        's-red': '#991b1b',
-                        's-red-glow': '#dc2626',
-                        's-gold': '#d4af37',
-                    },
-                    fontFamily: {
-                        'main': ['Cairo', 'sans-serif'],
-                        'en': ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #050505; color: #ffffff; }
-        .gold-text { color: #d4af37; }
-        .red-glow:hover { box-shadow: 0 0 20px rgba(153, 27, 27, 0.6); transition: all 0.3s ease; }
-        .image-hover:hover { transform: scale(1.03); transition: transform 0.4s ease; }
-    </style>
+    <title>SeVeN Studio7 - تصوير فوتوغرافي وفيديو وتصميم بالذكاء الاصطناعي الفاخر</title>
+    <meta name="description" content="استوديو SeVeN Studio7 يقدم خدمات تصوير فوتوغرافي وفيديو احترافية، تصميم بالذكاء الاصطناعي، ومنتجات هدايا مطبوعة. تصميم فاخر وجو سينمائي.">
+    <meta name="keywords" content="تصوير فوتوغرافي, تصوير فيديو, تصميم ذكاء اصطناعي, SeVeN Studio7, استوديو, مصور, هدايا مطبوعة, صور مؤطرة, احترافي, فاخر, سينمائي">
+    <meta name="author" content="SeVeN Studio7">
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="antialiased">
 
-    <!-- 1. شريط التنقل (يتغير بين الموبايل واللابتوب) -->
-    <nav class="fixed w-full z-50 bg-s-black/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- الشعار -->
-                <div class="flex-shrink-0">
-                    <span class="font-en text-2xl font-bold tracking-wider text-white">
-                        SeVeN <span class="text-s-red">Studio7</span>
-                    </span>
-                </div>
-                
-                <!-- روابط اللابتوب (تختفي في الموبايل) -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
-                        <a href="#" class="text-white hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">الرئيسية</a>
-                        <a href="#" class="text-gray-300 hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">معرض الأعمال</a>
-                        <a href="#" class="text-gray-300 hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">مختبر الذكاء الاصطناعي</a>
-                        <a href="#" class="text-gray-300 hover:text-s-gold px-3 py-2 rounded-md text-sm font-medium transition">الهدايا المطبوعة</a>
-                    </div>
-                </div>
+<body>
+    <header class="hero-section">
+        <div class="video-background">
+            <!-- يمكنك استبدال هذا برابط فيديو MP4 أو WebM خاص بك -->
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-landscape-under-the-sun-46700-large.mp4" type="video/mp4">
+                <!-- يمكنك إضافة مصادر أخرى للفيديو (WebM) هنا -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 class="studio-name">SeVeN Studio7</h1>
+            <p class="tagline">حيث تلتقي الفخامة بالعدسة - تجربة بصرية سينمائية</p>
+            <a href="#gallery" class="cta-button">اكتشف أعمالنا</a>
+        </div>
+    </header>
 
-                <!-- زر الموبايل (يظهر فقط في الموبايل) -->
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-s-red focus:outline-none">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">S7</a> <!-- شعار صغير ومختصر -->
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#gallery">المعرض</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
         </div>
     </nav>
-
-    <!-- 2. القسم الرئيسي (Hero Section) -->
-    <div class="relative pt-32 pb-12 sm:pt-40 sm:pb-16 lg:pb-24 overflow-hidden">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-            <!-- النص -->
-            <div class="text-center md:text-right md:w-1/2 mb-10 md:mb-0 z-10">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                    حيث يلتقي <span class="text-s-red">الإبداع</span><br>
-                    بالفخامة <span class="gold-text">والذكاء الاصطناعي</span>
-                </h1>
-                <p class="mt-4 text-xl text-gray-400 max-w-lg mx-auto md:mx-0 mb-8">
-                    استوديو SeVeN Studio7 يقدم لك تجربة تصوير سينمائية، وتصاميم ذكاء اصطناعي حصرية، وهدايا شخصية مطبوعة بأعلى جودة.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#" class="red-glow bg-s-red text-white font-bold py-3 px-8 rounded-full text-center">استكشف المعرض</a>
-                    <a href="#" class="border border-s-gold text-s-gold hover:bg-s-gold hover:text-s-black font-bold py-3 px-8 rounded-full text-center transition">اطلب خدمة الآن</a>
-                </div>
-            </div>
-            <!-- الصورة التوضيحية -->
-            <div class="md:w-1/2 relative z-10">
-                <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl border border-white/10 image-hover">
-                    <!-- صورة وهمية عالية الجودة للتوضيح -->
-                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="SeVeN Studio7 Photography" class="object-cover w-full h-64 md:h-96">
-                    <div class="absolute inset-0 bg-gradient-to-t from-s-black via-transparent to-transparent"></div>
-                </div>
-            </div>
+    
+    <!-- هنا يبدأ باقي محتوى موقعك (من نحن، خدمات، إلخ). تأكد من وجوده هنا -->
+    <section id="about">
+        <div class="container">
+            <h2>من نحن</h2>
+            <p>محتوى قسم من نحن الحالي...</p>
         </div>
-    </div>
+    </section>
 
-    <!-- 3. معرض الأعمال (يوضح الفرق بين شبكة الموبايل واللابتوب) -->
-    <div class="bg-s-dark py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-2">أحدث الأعمال المميزة</h2>
-                <div class="w-24 h-1 bg-s-red mx-auto rounded-full"></div>
-            </div>
-
-            <!-- الشبكة: عمود واحد في الموبايل، 2 في التابلت، 3 في اللابتوب -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- بطاقة 1 -->
-                <div class="bg-s-black rounded-xl overflow-hidden border border-white/5 image-hover group">
-                    <div class="relative h-64">
-                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                        <div class="absolute top-2 right-2 bg-s-red text-white text-xs font-bold px-3 py-1 rounded-full">أعراس</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">تصوير الأعراس والمناسبات</h3>
-                        <p class="text-gray-400 text-sm mb-4">توثيق لحظاتكم السعيدة بأسلوب سينمائي فاخر.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-s-gold text-sm">⭐ 4.9</span>
-                            <button class="text-white border border-white/20 hover:bg-s-red hover:border-s-red px-4 py-2 rounded-lg text-sm transition">عرض التفاصيل</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- بطاقة 2 -->
-                <div class="bg-s-black rounded-xl overflow-hidden border border-white/5 image-hover group">
-                    <div class="relative h-64">
-                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                        <div class="absolute top-2 right-2 bg-s-gold text-s-black text-xs font-bold px-3 py-1 rounded-full">ذكاء اصطناعي</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">بورتريه بالذكاء الاصطناعي</h3>
-                        <p class="text-gray-400 text-sm mb-4">تحويل صوركم إلى لوحات فنية رقمية بأساليب عالمية.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-s-gold text-sm">⭐ 5.0</span>
-                            <button class="text-white border border-white/20 hover:bg-s-red hover:border-s-red px-4 py-2 rounded-lg text-sm transition">جرب الآن</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- بطاقة 3 -->
-                <div class="bg-s-black rounded-xl overflow-hidden border border-white/5 image-hover group">
-                    <div class="relative h-64">
-                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                        <div class="absolute top-2 right-2 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-full">هدايا مطبوعة</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">ألبومات وهدايا شخصية</h3>
-                        <p class="text-gray-400 text-sm mb-4">طباعة فورية عالية الجودة بكاميرا Canon SELPHY CP1500.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-s-gold text-sm">⭐ 4.8</span>
-                            <button class="text-white border border-white/20 hover:bg-s-red hover:border-s-red px-4 py-2 rounded-lg text-sm transition">اطلب الآن</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="services">
+        <div class="container">
+            <h2>خدماتنا</h2>
+            <p>محتوى قسم خدماتنا الحالي...</p>
         </div>
-    </div>
+    </section>
 
-    <!-- 4. زر واتساب العائم -->
-    <a href="https://wa.me/989335960566" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-2xl transition transform hover:scale-110 flex items-center gap-2">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-        <span class="hidden sm:inline font-bold">تواصل عبر واتساب</span>
-    </a>
+    <section id="gallery">
+        <div class="container">
+            <h2>المعرض</h2>
+            <p>محتوى قسم المعرض الحالي...</p>
+        </div>
+    </section>
 
+    <section id="contact">
+        <div class="container">
+            <h2>تواصل معنا</h2>
+            <p>محتوى قسم تواصل معنا الحالي...</p>
+        </div>
+    </section>
+
+    <!-- باقي نهاية ملف الـ HTML مثل وسم <script> إذا كان موجوداً -->
+    <script src="js/script.js"></script>
 </body>
-</html>
