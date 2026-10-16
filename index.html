@@ -1,78 +1,277 @@
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeVeN Studio7 - تصوير فوتوغرافي وفيديو وتصميم بالذكاء الاصطناعي الفاخر</title>
-    <meta name="description" content="استوديو SeVeN Studio7 يقدم خدمات تصوير فوتوغرافي وفيديو احترافية، تصميم بالذكاء الاصطناعي، ومنتجات هدايا مطبوعة. تصميم فاخر وجو سينمائي.">
-    <meta name="keywords" content="تصوير فوتوغرافي, تصوير فيديو, تصميم ذكاء اصطناعي, SeVeN Studio7, استوديو, مصور, هدايا مطبوعة, صور مؤطرة, احترافي, فاخر, سينمائي">
-    <meta name="author" content="SeVeN Studio7">
-
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="SeVeN Studio7 | Photography, Cinematic Video, AI Design and Personalized Gifts">
+<title>SeVeN Studio7 | Creative Studio</title>
+<style>
+:root{--bg:#090909;--panel:#151515;--red:#c9273d;--gold:#d5b477;--white:#f8f5f0;--muted:#b9b3aa;--line:#302b25}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Tahoma,sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.container{width:min(1150px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#090909f5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{font-weight:900;font-size:23px;letter-spacing:1px}
+.logo span{color:var(--red)}
+.links{display:flex;gap:15px;flex-wrap:wrap;font-size:14px}
+.links a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:10px 17px;border:1px solid var(--gold);border-radius:28px;background:transparent;color:white}
+.btn:hover{background:var(--gold);color:#111}
+.primary{background:var(--red);border-color:var(--red)}
+section{padding:70px 0}
+.hero{min-height:590px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(#0007,#0009 70%,var(--bg)),url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1800&q=85') center/cover;animation:glow 8s ease-in-out infinite alternate}
+@keyframes glow{from{filter:brightness(.6)}to{filter:brightness(1)}}
+.hero-content{position:relative;max-width:820px;padding:25px}
+.eyebrow{color:var(--gold);letter-spacing:3px;font-size:12px}
+h1{font-size:clamp(42px,8vw,78px);line-height:1.2;margin:16px 0}
+h2{font-size:clamp(28px,5vw,42px);line-height:1.4}
+.gold{color:var(--gold)}
+.muted{color:var(--muted)}
+.hero p{font-size:18px;color:#eee;margin:0 auto 25px}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.ribbon{text-align:center;padding:13px;border-block:1px solid var(--line);color:var(--gold)}
+.heading{text-align:center;max-width:700px;margin:0 auto 32px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card img{width:100%;height:210px;object-fit:cover;background:#222}
+.card-body{padding:16px}
+.card-body h3{margin:0 0 7px}
+.card-body p{font-size:14px;color:var(--muted)}
+.card-actions{display:flex;gap:8px;flex-wrap:wrap}
+.card-actions .btn{font-size:13px;padding:7px 11px}
+.price{color:var(--gold);margin-bottom:12px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.panel{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:17px}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.feature{border:1px solid var(--line);border-radius:12px;padding:12px}
+.feature b{display:block;color:var(--gold)}
+.field{width:100%;padding:12px;background:#101010;border:1px solid #40382f;border-radius:10px;color:white}
+label{display:block;margin:10px 0 5px}
+textarea{resize:vertical;min-height:100px}
+.toolbar{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.toolbar>*{flex:1;min-width:180px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery a{position:relative;overflow:hidden;border-radius:13px}
+.gallery img{width:100%;height:230px;object-fit:cover;transition:.3s}
+.gallery a:hover img{transform:scale(1.04)}
+.gallery span{position:absolute;bottom:0;right:0;left:0;padding:25px 12px 8px;background:linear-gradient(transparent,#000d)}
+.notice{font-size:13px;color:#e2c995;background:#19150f;border:1px solid #5b4729;padding:12px;border-radius:10px;margin-top:14px}
+footer{text-align:center;padding:30px 0;border-top:1px solid var(--line);color:var(--muted)}
+[hidden]{display:none!important}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.links{gap:10px}}
+@media(max-width:540px){section{padding:48px 0}nav{padding:12px 0}.links{width:100%;justify-content:center;font-size:12px}.hero{min-height:510px}.grid{gap:10px}.card img{height:145px}.card-body{padding:11px}.card-body h3{font-size:16px}.card-actions .btn{font-size:12px;padding:6px 8px}.gallery{grid-template-columns:1fr 1fr}.gallery img{height:170px}}
+</style>
 </head>
-
 <body>
-    <header class="hero-section">
-        <div class="video-background">
-            <!-- يمكنك استبدال هذا برابط فيديو MP4 أو WebM خاص بك -->
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-landscape-under-the-sun-46700-large.mp4" type="video/mp4">
-                <!-- يمكنك إضافة مصادر أخرى للفيديو (WebM) هنا -->
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="hero-content">
-            <h1 class="studio-name">SeVeN Studio7</h1>
-            <p class="tagline">حيث تلتقي الفخامة بالعدسة - تجربة بصرية سينمائية</p>
-            <a href="#gallery" class="cta-button">اكتشف أعمالنا</a>
-        </div>
-    </header>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="nav-logo">S7</a> <!-- شعار صغير ومختصر -->
-            <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#gallery">المعرض</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <!-- هنا يبدأ باقي محتوى موقعك (من نحن، خدمات، إلخ). تأكد من وجوده هنا -->
-    <section id="about">
-        <div class="container">
-            <h2>من نحن</h2>
-            <p>محتوى قسم من نحن الحالي...</p>
-        </div>
-    </section>
+<header>
+<nav class="container">
+<a class="logo" href="#home"><span>SeVeN</span> Studio7</a>
+<div class="links">
+<a href="#home">الرئيسية</a>
+<a href="#about">الاستوديو</a>
+<a href="#services">الخدمات</a>
+<a href="#gallery">المعرض</a>
+<a href="#shop">الهدايا</a>
+<a href="#ai">الذكاء الاصطناعي</a>
+<a href="#contact">التواصل</a>
+</div>
+<a class="btn primary" href="#contact">اطلب الآن</a>
+</nav>
+</header>
 
-    <section id="services">
-        <div class="container">
-            <h2>خدماتنا</h2>
-            <p>محتوى قسم خدماتنا الحالي...</p>
-        </div>
-    </section>
+<main>
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="eyebrow">PHOTOGRAPHY • CINEMA • CREATIVE AI</div>
+<h1>نحوّل اللحظات إلى <span class="gold">فن</span></h1>
+<p>تصوير احترافي، فيديو سينمائي، تصاميم إبداعية وهدايا شخصية تحفظ أجمل ذكرياتك.</p>
+<div class="actions">
+<a class="btn primary" href="#gallery">اكتشف أعمالنا</a>
+<a class="btn" href="#shop">تصفّح الهدايا</a>
+</div>
+</div>
+</section>
 
-    <section id="gallery">
-        <div class="container">
-            <h2>المعرض</h2>
-            <p>محتوى قسم المعرض الحالي...</p>
-        </div>
-    </section>
+<div class="ribbon">إبداع بصري • تفاصيل فاخرة • ذكريات تدوم</div>
 
-    <section id="contact">
-        <div class="container">
-            <h2>تواصل معنا</h2>
-            <p>محتوى قسم تواصل معنا الحالي...</p>
-        </div>
-    </section>
+<section id="about">
+<div class="container two-col">
+<div>
+<div class="eyebrow">ABOUT OUR STUDIO</div>
+<h2>أهلاً بك في <span class="gold">SeVeN Studio7</span></h2>
+<p class="muted">مشروع إبداعي يجمع التصوير والطباعة والفيديو والتصميم والهدايا الشخصية ضمن تجربة رقمية واحدة.</p>
+<div class="features">
+<div class="feature"><b>01 / Photography</b>التصوير الفوتوغرافي</div>
+<div class="feature"><b>02 / Cinematic</b>الفيديو والمونتاج</div>
+<div class="feature"><b>03 / Creative AI</b>التصميم بالذكاء الاصطناعي</div>
+<div class="feature"><b>04 / Gifts</b>الطباعة والهدايا</div>
+</div>
+</div>
+<img style="width:100%;height:340px;object-fit:cover;border-radius:17px" src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1000&q=85" alt="كاميرا تصوير" loading="lazy">
+</div>
+</section>
 
-    <!-- باقي نهاية ملف الـ HTML مثل وسم <script> إذا كان موجوداً -->
-    <script src="js/script.js"></script>
+<section id="services" style="background:#0d0d0d">
+<div class="container">
+<div class="heading"><div class="eyebrow">OUR SERVICES</div><h2>خدمات <span class="gold">الاستوديو</span></h2><p class="muted">حلول إبداعية للأفراد والعائلات والمشاريع.</p></div>
+<div class="grid">
+<article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="تصوير مناسبات"><div class="card-body"><h3>تصوير المناسبات</h3><p>الأعراس والاحتفالات والذكريات الخاصة.</p><button class="btn order" data-item="تصوير المناسبات">اطلب الخدمة</button></div></article>
+<article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=700&q=80" alt="تصوير عائلي"><div class="card-body"><h3>الأطفال والعائلة</h3><p>صور عائلية وذكريات الطفولة.</p><button class="btn order" data-item="تصوير الأطفال والعائلة">اطلب الخدمة</button></div></article>
+<article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="إنتاج فيديو"><div class="card-body"><h3>الفيديو والمونتاج</h3><p>فيديو سينمائي وReels ومحتوى إعلاني.</p><button class="btn order" data-item="الفيديو والمونتاج">اطلب الخدمة</button></div></article>
+<article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=700&q=80" alt="تصميم"><div class="card-body"><h3>التصميم والإعلان</h3><p>بوسترات وإعلانات ومحتوى بصري.</p><button class="btn order" data-item="التصميم والإعلان">اطلب الخدمة</button></div></article>
+<article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80" alt="تصوير منتجات"><div class="card-body"><h3>تصوير المنتجات</h3><p>صور عرض احترافية للمنتجات.</p><button class="btn order" data-item="تصوير المنتجات">اطلب الخدمة</button></div></article>
+<article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="مساحات"><div class="card-body"><h3>الأماكن والمساحات</h3><p>صور داخلية وخارجية للمساحات.</p><button class="btn order" data-item="تصوير الأماكن والمساحات">اطلب الخدمة</button></div></article>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="container">
+<div class="heading"><div class="eyebrow">PORTFOLIO</div><h2>معرض <span class="gold">الأعمال</span></h2><p class="muted">اضغط على الصورة لفتح حجم أكبر. بدّل الصور التجريبية بأعمالك الأصلية.</p></div>
+<div class="gallery">
+<a href="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=90" target="_blank" rel="noopener"><img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="المناسبات"><span>المناسبات</span></a>
+<a href="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1400&q=90" target="_blank" rel="noopener"><img loading="lazy" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=700&q=80" alt="تصوير خارجي"><span>التصوير الخارجي</span></a>
+<a href="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1400&q=90" target="_blank" rel="noopener"><img loading="lazy" src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=700&q=80" alt="التصوير الاحترافي"><span>التصوير الاحترافي</span></a>
+<a href="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=90" target="_blank" rel="noopener"><img loading="lazy" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80" alt="الكاميرات"><span>معدات التصوير</span></a>
+<a href="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1400&q=90" target="_blank" rel="noopener"><img loading="lazy" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="الفيديو"><span>الفيديو</span></a>
+<a href="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=90" target="_blank" rel="noopener"><img loading="lazy" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="المساحات"><span>المساحات</span></a>
+</div>
+</div>
+</section>
+
+<section id="shop" style="background:#0d0d0d">
+<div class="container">
+<div class="heading"><div class="eyebrow">PERSONALIZED GIFTS</div><h2>كتالوج الصور و<span class="gold">الهدايا</span></h2><p class="muted">ابحث عن المنتج أو اختر الفئة المناسبة.</p></div>
+<div class="toolbar">
+<input class="field" id="search" placeholder="ابحث عن منتج..." aria-label="البحث">
+<select class="field" id="category" aria-label="فئة المنتج">
+<option value="all">جميع الفئات</option>
+<option value="print">صور مطبوعة</option>
+<option value="wall">إطارات وصور معلقة</option>
+<option value="magnet">مغناطيسات</option>
+<option value="jewelry">أساور وسلاسل</option>
+<option value="keychain">ميداليات</option>
+</select>
+</div>
+<div class="grid" id="products">
+<article class="card product" data-category="print" data-name="صور مطبوعة"><img loading="lazy" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80" alt="صور مطبوعة"><div class="card-body"><h3>صور مطبوعة</h3><p>صور شخصية وعائلية بمقاسات مختلفة.</p><div class="price">السعر عند الطلب</div><div class="card-actions"><button class="btn order" data-item="صور مطبوعة">اطلب</button><button class="btn like">♡ إعجاب</button></div></div></article>
+<article class="card product" data-category="wall" data-name="إطار صورة"><img loading="lazy" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=700&q=80" alt="إطار صورة"><div class="card-body"><h3>إطار صورة</h3><p>ديكور للمكتب أو المنزل.</p><div class="price">السعر عند الطلب</div><div class="card-actions"><button class="btn order" data-item="إطار صورة">اطلب</button><button class="btn like">♡ إعجاب</button></div></div></article>
+<article class="card product" data-category="magnet" data-name="مغناطيس صورة"><img loading="lazy" src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=700&q=80" alt="فكرة هدية"><div class="card-body"><h3>مغناطيس صورة</h3><p>فكرة تذكارية للثلاجة.</p><div class="price">السعر عند الطلب</div><div class="card-actions"><button class="btn order" data-item="مغناطيس صورة">اطلب</button><button class="btn like">♡ إعجاب</button></div></div></article>
+<article class="card product" data-category="jewelry" data-name="سلسلة مخصصة"><img loading="lazy" src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80" alt="سلسلة"><div class="card-body"><h3>سلسلة مخصصة</h3><p>تصميم شخصي حسب إمكانية التصنيع.</p><div class="price">السعر عند الطلب</div><div class="card-actions"><button class="btn order" data-item="سلسلة مخصصة">اطلب</button><button class="btn like">♡ إعجاب</button></div></div></article>
+<article class="card product" data-category="jewelry" data-name="سوار مخصص"><img loading="lazy" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=80" alt="سوار"><div class="card-body"><h3>سوار مخصص</h3><p>فكرة إكسسوار بهوية شخصية.</p><div class="price">السعر عند الطلب</div><div class="card-actions"><button class="btn order" data-item="سوار مخصص">اطلب</button><button class="btn like">♡ إعجاب</button></div></div></article>
+<article class="card product" data-category="keychain" data-name="ميدالية مفاتيح"><img loading="lazy" src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=700&q=80" alt="هدية"><div class="card-body"><h3>ميدالية مفاتيح</h3><p>هدية بصورة أو تصميم مخصص.</p><div class="price">السعر عند الطلب</div><div class="card-actions"><button class="btn order" data-item="ميدالية مفاتيح">اطلب</button><button class="btn like">♡ إعجاب</button></div></div></article>
+</div>
+<p class="muted" style="font-size:13px">صور المنتجات للعرض التجريبي، وليست تأكيداً لتوفر المنتجات. الإعجابات محفوظة محلياً على جهاز الزائر وليست عدّاداً عاماً.</p>
+</div>
+</section>
+
+<section id="ai">
+<div class="container two-col">
+<div><div class="eyebrow">CREATIVE AI LAB</div><h2>مختبر <span class="gold">الذكاء الاصطناعي</span></h2><p class="muted">اكتب فكرتك وجهّز برومبت احترافي لإرساله إلى أداة توليد الصور التي تختارها. التوليد الحقيقي داخل الموقع يحتاج ربط خدمة خارجية.</p><div class="features"><div class="feature"><b>صور سينمائية</b>مشاهد وإضاءة</div><div class="feature"><b>صور المنتجات</b>عرض إعلاني</div><div class="feature"><b>تصميم الهدايا</b>تصورات بصرية</div><div class="feature"><b>محتوى اجتماعي</b>أفكار Reels</div></div></div>
+<div class="panel">
+<h3>جهّز برومبتك</h3>
+<label for="idea">وصف فكرتك</label>
+<textarea class="field" id="idea" placeholder="مثال: إعلان سينمائي فاخر لإطار صورة بخلفية سوداء وإضاءة ذهبية..."></textarea>
+<label for="style">النمط</label>
+<select class="field" id="style"><option>واقعي واحترافي</option><option>سينمائي فاخر</option><option>إعلان منتجات</option><option>طبيعي وهادئ</option></select>
+<button class="btn primary" id="generate" style="margin-top:14px">جهّز البرومبت</button>
+<button class="btn" id="copy" style="margin-top:14px">نسخ البرومبت</button>
+<p id="result" class="muted" style="overflow-wrap:anywhere;margin-top:15px"></p>
+<p class="notice">هذه الميزة تكتب البرومبت فقط ولا تولّد صورة بنفسها.</p>
+</div>
+</div>
+</section>
+
+<section id="contact" style="background:#0d0d0d">
+<div class="container two-col">
+<div><div class="eyebrow">CONTACT THE STUDIO</div><h2>خلّينا نبدأ <span class="gold">مشروعك</span></h2><p class="muted">تابع أعمال الاستوديو عبر الحسابات الرسمية.</p><div class="actions" style="justify-content:flex-start"><a class="btn" href="https://www.instagram.com/n_svvn7/" target="_blank" rel="noopener">Instagram ↗</a><a class="btn" href="https://www.youtube.com/@n_svvn7" target="_blank" rel="noopener">YouTube ↗</a><a class="btn" href="https://t.me/Nabiil7" target="_blank" rel="noopener">Telegram ↗</a></div></div>
+<div class="panel">
+<h3>نموذج طلب خدمة أو منتج</h3>
+<form id="orderForm">
+<label for="name">الاسم</label><input class="field" id="name" placeholder="اسمك">
+<label for="contactInfo">وسيلة التواصل</label><input class="field" id="contactInfo" placeholder="حسابك أو بريدك">
+<label for="item">الخدمة أو المنتج</label><input class="field" id="item" placeholder="شنو تحتاج؟">
+<label for="details">التفاصيل</label><textarea class="field" id="details" placeholder="اكتب تفاصيل الطلب..."></textarea>
+<button class="btn primary" type="submit" style="margin-top:15px">نسخ رسالة الطلب</button>
+</form>
+<p class="notice">هذا النموذج يجهّز رسالة فقط؛ استقبال الطلبات تلقائياً يحتاج خدمة نماذج أو خادماً خارجياً.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<a class="logo" href="#home"><span>SeVeN</span> Studio7</a>
+<p>حيث تلتقي الفخامة بالعدسة.</p>
+<small>© <span id="year"></span> SeVeN Studio7</small>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+$('#year').textContent=new Date().getFullYear();
+
+const products=[...document.querySelectorAll('.product')];
+function filterProducts(){
+ const term=$('#search').value.trim().toLowerCase();
+ const cat=$('#category').value;
+ products.forEach(p=>{
+  const categoryOK=cat==='all'||p.dataset.category===cat;
+  const textOK=(p.dataset.name+' '+p.innerText).toLowerCase().includes(term);
+  p.hidden=!(categoryOK&&textOK);
+ });
+}
+$('#search').addEventListener('input',filterProducts);
+$('#category').addEventListener('change',filterProducts);
+
+document.querySelectorAll('.order').forEach(button=>{
+ button.addEventListener('click',()=>{
+  $('#item').value=button.dataset.item||'';
+  $('#contact').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>$('#name').focus(),400);
+ });
+});
+
+document.querySelectorAll('.like').forEach((button,i)=>{
+ const key='seven-studio7-like-'+i;
+ let liked=localStorage.getItem(key)==='1';
+ const update=()=>{button.textContent=liked?'♥ أعجبني':'♡ إعجاب';button.style.color=liked?'#d5b477':''};
+ update();
+ button.addEventListener('click',()=>{
+  liked=!liked;
+  localStorage.setItem(key,liked?'1':'0');
+  update();
+ });
+});
+
+let promptText='';
+$('#generate').addEventListener('click',()=>{
+ const idea=$('#idea').value.trim();
+ if(!idea){$('#result').textContent='اكتب فكرتك أولاً.';return;}
+ promptText='Create a realistic, premium visual for SeVeN Studio7. Style: '+$('#style').value+'. Concept: '+idea+'. Cinematic lighting, refined composition, natural details, premium black, deep red and subtle gold accents where appropriate. Avoid distorted faces, hands, text and logos. Preserve identity when editing a reference photo.';
+ $('#result').textContent=promptText;
+});
+
+$('#copy').addEventListener('click',async()=>{
+ if(!promptText){$('#result').textContent='جهّز البرومبت أولاً.';return;}
+ try{await navigator.clipboard.writeText(promptText);$('#result').textContent='تم نسخ البرومبت.';}
+ catch(e){$('#result').textContent='انسخ النص التالي يدوياً: '+promptText;}
+});
+
+$('#orderForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const message='طلب إلى SeVeN Studio7\nالاسم: '+($('#name').value||'غير محدد')+'\nوسيلة التواصل: '+($('#contactInfo').value||'غير محددة')+'\nالخدمة أو المنتج: '+($('#item').value||'غير محدد')+'\nالتفاصيل: '+($('#details').value||'لا توجد تفاصيل');
+ try{await navigator.clipboard.writeText(message);alert('تم نسخ رسالة الطلب. أرسلها عبر إحدى وسائل التواصل الرسمية.');}
+ catch(err){prompt('انسخ رسالة الطلب:',message);}
+});
+</script>
 </body>
+</html>
